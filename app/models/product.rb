@@ -10,7 +10,7 @@ class Product < ApplicationRecord
     validates :name, presence: true, length: { minimum: 2, maximum: 20 }
     validates :description, presence: true, length: { minimum: 20 }
     validates :price , presence: true
-    validates :type , presence: true
+    validates :categ , presence: true
     def avg
         (self.ratings.average(:stars)).to_f
     end
