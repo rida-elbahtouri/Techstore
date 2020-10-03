@@ -3,7 +3,9 @@ class ProductsController < ApplicationController
     def index
         @products = Product.all
     end
-
+    def show
+        @product = Product.find(params[:id])
+    end
     def new
         @product = Product.new
     end
@@ -34,6 +36,16 @@ class ProductsController < ApplicationController
         end
     end
 
+    def destroy
+        @product = current_user.goods.find(params[:id])
+        if @product.destroy
+            flash[:notice] = "your product has been removed succesfully"
+            redirect_to products_path
+        else
+            flash[:alert] = "we couldn't remove the product"
+            render index
+        end
+    end
   
 
     private
