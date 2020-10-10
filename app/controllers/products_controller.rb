@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
     before_action :authenticate_user!
     def index
         @products = Product.all
+        @basket = current_user.baskets.new
+        @product = Product.find(1)
     end
     def show
         @product = Product.find(params[:id])

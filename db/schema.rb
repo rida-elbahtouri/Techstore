@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_10_122548) do
+ActiveRecord::Schema.define(version: 2020_10_10_133653) do
 
   create_table "baskets", force: :cascade do |t|
     t.integer "customer_id"
     t.integer "product_id"
+    t.integer "quantity"
   end
 
   create_table "comments", force: :cascade do |t|

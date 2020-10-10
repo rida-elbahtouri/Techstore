@@ -1,4 +1,7 @@
 <% @products.each do |product| %>
 <%= link_to product.name , product_path(product.id) %>
  <%= link_to "delete", product_path(product.id) ,method: :delete %> <br />
+ <button id="addtocard" type='button'> add to card</button>
 <% end %>
+<%= render ('basket/new') %>
+<%= javascript_pack_tag 'addtocard' %>
