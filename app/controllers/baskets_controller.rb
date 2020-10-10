@@ -1,6 +1,6 @@
 class BasketsController < ApplicationController
     before_action :authenticate_user!
-
+    skip_before_action :verify_authenticity_token
     def index
         @basket = current_user.products
     end
@@ -15,7 +15,7 @@ class BasketsController < ApplicationController
             flash[:notice] = "your product has been added to card"
             redirect_to products_path
         else
-            flash[:alert] = "we couldn't add the product to your card" 
+            flash[:alert] = "we couldn't add the product to your card #{@basket.errors.full_messages}" 
             redirect_to products_path
         end 
     end
@@ -50,6 +50,6 @@ class BasketsController < ApplicationController
     private
 
     def product_params
-        params.require(:basket).permit(:product_id)
+        params.require(:basket).permit(:product_id,:quantity)
     end
 end

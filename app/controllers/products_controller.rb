@@ -48,7 +48,11 @@ class ProductsController < ApplicationController
             render index
         end
     end
-  
+    
+    def productdata
+        product = Product.find(params[:id])
+        render json: product ,only: [:name,:price]
+    end
 
     private
 
