@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_03_125324) do
+ActiveRecord::Schema.define(version: 2020_10_10_122548) do
 
   create_table "baskets", force: :cascade do |t|
     t.integer "customer_id"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 2020_10_03_125324) do
   end
 
   create_table "cus_details", force: :cascade do |t|
+    t.integer "customer_id"
+    t.string "adress"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "seller_id"
+    t.integer "product_id"
+    t.integer "quantity"
     t.integer "customer_id"
     t.string "adress"
   end
