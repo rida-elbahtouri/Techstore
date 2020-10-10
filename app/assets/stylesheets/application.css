@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-.product{
-    background-color: tomato;
-    position: relative;
+.basket{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
 }

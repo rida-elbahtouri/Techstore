@@ -2,7 +2,7 @@ class BasketsController < ApplicationController
     before_action :authenticate_user!
     skip_before_action :verify_authenticity_token
     def index
-        @basket = current_user.products
+        @baskets = current_user.baskets
     end
 
     def new

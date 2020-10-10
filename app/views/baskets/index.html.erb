@@ -1,0 +1,15 @@
+<div class="basket">
+
+<h1>Product name</h1>
+<h1>Price</h1>
+<h1>Quantity</h1>
+<h1>Total</h1>
+<% @baskets.each do |basket| %>
+
+<p> <%= link_to basket.product.name , product_path(basket.product.id) %></p>
+<p> <%= basket.product.price%> </p>
+<p>  <%= basket.quantity %></p>
+
+<p> <%= basket.quantity*basket.product.price  %> </p>
+<% end %>
+</div>
