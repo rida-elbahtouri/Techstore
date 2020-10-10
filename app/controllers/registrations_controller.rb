@@ -36,8 +36,6 @@ class RegistrationsController < Devise::RegistrationsController
         redirect_to new_both_detail_path
       elsif link == "customer"
         redirect_to new_cus_detail_path
-      else
-        redirect_to new_sel_detail_path
       end
     end
   end
