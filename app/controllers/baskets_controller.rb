@@ -3,6 +3,10 @@ class BasketsController < ApplicationController
     skip_before_action :verify_authenticity_token
     def index
         @baskets = current_user.baskets
+        @sum = 0
+        @baskets.each do |b|
+            @sum += (b.quantity * b.product.price)
+        end
     end
 
     def new

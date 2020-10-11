@@ -1,7 +1,7 @@
 const addtocard = document.querySelectorAll(".addtocard")
 const renderForm = document.getElementById("renderForm")
 const editCard = document.querySelectorAll(".editcard")
-
+const cardtotal = document.getElementById("cardtotal")
 const CreateAdToCardForm = (data,id,basketID) =>{
     const form = document.createElement("div")
     form.className="addform"
@@ -59,7 +59,9 @@ const updatebasket=(e,qunt,productId,BasketId,quntel,total,price)=>{
     body: JSON.stringify({id:parseInt(BasketId), product_id: parseInt(productId),quantity:parseInt(qunt) }),
     headers: {"Content-type": "application/json; charset=UTF-8"}})
     .then(renderForm.style.display="none",
+          cardtotal.innerHTML = parseInt(cardtotal.innerHTML)+parseInt((qunt*price)-(quntel.innerHTML*price)),
           quntel.innerHTML=qunt,
-          total.innerHTML=qunt*price
+          total.innerHTML=qunt*price,
+          
     )
 }
