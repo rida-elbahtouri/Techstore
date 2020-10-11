@@ -9,7 +9,14 @@
 <p> <%= link_to basket.product.name , product_path(basket.product.id) %></p>
 <p> <%= basket.product.price%> </p>
 <p>  <%= basket.quantity %></p>
-
 <p> <%= basket.quantity*basket.product.price  %> </p>
-<% end %>
+<div>
+<%= button_to  "delete", basket_path(basket.id),method: :delete %>
+<button class="editcard" value=<%= basket.product.id %>>edit</button>
 </div>
+<% end %>
+
+<div id="renderForm" class="addcardform" ></div>
+
+</div>
+<%= javascript_pack_tag 'addtocard' %>

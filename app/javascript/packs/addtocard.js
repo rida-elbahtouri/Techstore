@@ -1,7 +1,8 @@
 const addtocard = document.querySelectorAll(".addtocard")
 const renderForm = document.getElementById("renderForm")
+const editCard = document.querySelectorAll(".editcard")
 
-const CreateAdToCardForm = (data,id) =>{
+const CreateAdToCardForm = (data,id,method,action) =>{
     const form = document.createElement("div")
     form.className="addform"
     renderForm.appendChild(form)
@@ -15,8 +16,8 @@ const CreateAdToCardForm = (data,id) =>{
     form.appendChild(price);
     
     const add = document.createElement('form');
-    add.method='post'
-    add.action = '/baskets'
+    add.method=method
+    add.action = action
     form.appendChild(add);
 
     const quantity = document.createElement('input');
@@ -44,8 +45,17 @@ addtocard.forEach(btn=>{
         fetch(`/productscard/${e.target.value}`)
         .then((data) => data.json())
         .then((data) => {
-            CreateAdToCardForm(data,e.target.value)
+            CreateAdToCardForm(data,e.target.value,"post","/baskets")
         });
 })
 })
-
+editCard.forEach(btn=>{
+    btn.addEventListener('click',(e)=>{
+        renderForm.style.display="block"
+        fetch(`/productscard/${e.target.value}`)
+        .then((data) => data.json())
+        .then((data) => {
+            CreateAdToCardForm(data,e.target.value,"patch","/basket")
+        });
+})
+})
