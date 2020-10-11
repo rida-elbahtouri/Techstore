@@ -3,13 +3,13 @@
 <h1>Product name</h1>
 <h1>Price</h1>
 <h1>Quantity</h1>
-<h1>Total</h1>
+<h1 class="tootal">Total</h1>
 <% @baskets.each do |basket| %>
 
 <p> <%= link_to basket.product.name , product_path(basket.product.id) %></p>
 <p> <%= basket.product.price%> </p>
 <p id=<%= basket.id %> >  <%= basket.quantity %></p>
-<p> <%= basket.quantity*basket.product.price  %> </p>
+<p id="totalfor<%= basket.id %>" > <%= basket.quantity*basket.product.price  %> </p>
 <div>
 <%= button_to  "delete", basket_path(basket.id),method: :delete %>
 <button class="editcard" value="<%= basket.id %>/<%=basket.product.id%>">edit</button>

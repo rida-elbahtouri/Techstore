@@ -17,12 +17,13 @@ const CreateAdToCardForm = (data,id,basketID) =>{
     
     const edit = document.createElement('form');
     form.appendChild(edit);
-
+    const qunt = document.getElementById(basketID)
+    const total = document.getElementById(`totalfor${basketID}`)
     const quantity = document.createElement('input');
     quantity.className = 'quantity ';
     quantity.type="number"
     // quantity.name="basket[quantity]"
-    quantity.value = 1;
+    quantity.value = parseInt(qunt.innerHTML);
     edit.appendChild(quantity);
 
     const product_id =document.createElement('input');
@@ -30,12 +31,12 @@ const CreateAdToCardForm = (data,id,basketID) =>{
     // product_id.name="basket[product_id]"
     product_id.value=id
     edit.appendChild(product_id)
-    const qunt = document.getElementById(basketID)
+  
     const btn = document.createElement('input');
     btn.className = 'btn';
     btn.type="submit"
     btn.value = "edit To Card";
-    btn.onclick=(e)=>updatebasket(e,quantity.value,id,basketID)
+    btn.onclick=(e)=>updatebasket(e,quantity.value,id,basketID,qunt,total,data.price)
     edit.appendChild(btn);
 }
 editCard.forEach(btn=>{
@@ -51,11 +52,14 @@ editCard.forEach(btn=>{
 })
 })
 
-const updatebasket=(e,qunt,productId,BasketId)=>{
+const updatebasket=(e,qunt,productId,BasketId,quntel,total,price)=>{
     e.preventDefault()
     fetch(`/baskets/${BasketId}`,
     {method: 'PATCH',
     body: JSON.stringify({id:parseInt(BasketId), product_id: parseInt(productId),quantity:parseInt(qunt) }),
     headers: {"Content-type": "application/json; charset=UTF-8"}})
-    .then(renderForm.style.display="none")
+    .then(renderForm.style.display="none",
+          quntel.innerHTML=qunt,
+          total.innerHTML=qunt*price
+    )
 }
