@@ -49,13 +49,3 @@ addtocard.forEach(btn=>{
         });
 })
 })
-editCard.forEach(btn=>{
-    btn.addEventListener('click',(e)=>{
-        renderForm.style.display="block"
-        fetch(`/productscard/${e.target.value}`)
-        .then((data) => data.json())
-        .then((data) => {
-            CreateAdToCardForm(data,e.target.value,"patch","/basket")
-        });
-})
-})
