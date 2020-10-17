@@ -15,6 +15,7 @@ class OrdersController < ApplicationController
             adress:current_user.cus_detail.adress)    
             order.save    
         end
+        user.baskets.delete_all
        redirect_to products_path
        
     end
