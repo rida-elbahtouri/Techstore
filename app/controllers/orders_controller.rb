@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
     before_action :authenticate_user!
-    def new
-        @cus_details = Order.new
+    def index
+        @orders = current_user.orders
     end
 
     def create
@@ -18,11 +18,4 @@ class OrdersController < ApplicationController
        redirect_to products_path
        
     end
-
-    private
-
-    # def order_params
-    #     # params.require(:order).permit(:seller_id,:product_id,:quantity,:customer_id,:adress)
-    #     params.require(:order).permit(:customer_id)
-    # end
 end
