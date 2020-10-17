@@ -1,4 +1,5 @@
 <% @products.each do |product| %>
+<%= image(product) %>
 <div name=<%= product.price %> class ="product">
 <%= link_to product.name , product_path(product.id) %>
  <%= link_to "delete", product_path(product.id) ,method: :delete %> <br />

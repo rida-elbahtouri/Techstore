@@ -1,4 +1,7 @@
 <%= form_for @product do |f| %>
+
+    <%= f.label "Product Image Url"%><br />
+    <%= f.text_field :photo %><br />
     <%= f.label "Product Name"%><br />
     <%= f.text_field :name %><br />
     <%= f.label "Description"%><br />
