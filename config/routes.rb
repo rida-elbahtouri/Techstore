@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :sel_details
   resources :both_details
   resources :baskets
+  resources :orders
   get '/productscard/:id',to: "products#productdata"
   # get '/details/both',to: "userdetails#new_both"
   # get '/details/customer',to: "userdetails#new_customer"

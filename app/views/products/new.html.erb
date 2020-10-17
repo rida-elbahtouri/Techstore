@@ -1,4 +1,10 @@
+ <% @product.errors.full_messages.each do |msg| %>
+        <p> <%= msg%> </p>
+    <% end %>
 <%= form_for @product do |f| %>
+
+   
+
     <%= f.label "Product Name"%><br />
     <%= f.text_field :name %><br />
     <%= f.label "Description"%><br />

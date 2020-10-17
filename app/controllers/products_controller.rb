@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
             redirect_to products_path
         else
             flash[:alert] = "we couldn't create the product"
-            render new
+            render :new
         end 
     end
 
@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
             redirect_to products_path
         else
             flash[:alert] = "we couldn't update the product"
-            render edit
+            render :edit
         end
     end
 
@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
             redirect_to products_path
         else
             flash[:alert] = "we couldn't remove the product"
-            render index
+            render :index
         end
     end
     

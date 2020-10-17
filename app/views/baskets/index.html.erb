@@ -16,6 +16,7 @@
 </div>
 <% end %>
 <h2 id="cardtotal"> <%= @sum %> </h2>
+<%= button_to  "Checkout", orders_path(customer_id:current_user.id),method: :post %>
 <div id="renderForm" class="addcardform" ></div>
 
 </div>
