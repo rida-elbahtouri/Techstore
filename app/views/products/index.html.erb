@@ -5,7 +5,7 @@
 
 <div class='product-card'>
 <%= image(product) %>
-<div name=<%= product.price %> class ="product">
+<div class ="product">
 <%= link_to product.name , product_path(product.id) %>
 <%= link_to "delete", product_path(product.id) ,method: :delete %> <br />
  <button class="addtocard" value=<%= product.id %>  type='button'> add to card</button>
