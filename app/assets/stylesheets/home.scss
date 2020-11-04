@@ -1,0 +1,16 @@
+.products {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+}
+.product-card{
+    border: 1px solid gray;
+    
+    img{
+        width: 100%;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
