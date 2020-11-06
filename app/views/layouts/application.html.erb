@@ -4,25 +4,32 @@
     <title>TechStore</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+   
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
 
   <nav class='nav'>
-  <div>
+  <div class='right-nav'>
     <h1>TechStore</h1>
     
-      <div class="category">
-    <span class="nav-cat">Category</span>
+    <div class="category">
+    <span class="nav-cat">Category <i class="fab fa-gitter"></i></span>
     <div class="category-content">
       <a href="#">cat</a>
       <a href="#">cat</a>
       <a href="#">cat</a>
     </div>
+
+   
   </div>
+  
+   <span class='promo'>Promotions</span>
   </div>
   </nav>
   <p class="notice"><%= notice %></p>

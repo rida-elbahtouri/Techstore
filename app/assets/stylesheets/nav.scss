@@ -12,9 +12,20 @@
     text-decoration: none;
   }
   
+  .right-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    .promo {
+      margin-left: 10px;
+      margin-right: 20px;
+      padding-top: 27px;
+    }
+  }
   .category {
     float: left;
     overflow: hidden;
+    padding-top: 27px;
+    margin-left: 20px;
   }
   
   
@@ -29,14 +40,12 @@
     margin: 0; 
   }
   
-  .nav a:hover, .category:hover .nav-cat {
-    background-color: #F02555;
-  }
+ 
   
   .category-content {
     display: none;
     position: absolute;
-    background-color: #616161;
+    background-color: #ffffff;
     min-width: 160px;
     z-index: 1;
   }
