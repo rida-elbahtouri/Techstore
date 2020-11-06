@@ -1,0 +1,61 @@
+
+ .nav{
+    overflow: hidden;
+    background-color: white;
+  }
+  .nav a {
+    float: left;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+  }
+  
+  .category {
+    float: left;
+    overflow: hidden;
+  }
+  
+  
+  .nav-cat .category {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: rgb(58, 58, 58);
+    padding: 15px;
+    background-color: inherit;
+    font-family: inherit; 
+    margin: 0; 
+  }
+  
+  .nav a:hover, .category:hover .nav-cat {
+    background-color: #F02555;
+  }
+  
+  .category-content {
+    display: none;
+    position: absolute;
+    background-color: #616161;
+    min-width: 160px;
+    z-index: 1;
+  }
+  
+  .category-content a {
+    float: none;
+    color: black;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .category-content a:hover {
+    background-color: #ddd;
+  }
+  
+  
+  .category:hover .category-content {
+    display: block;
+  } 
