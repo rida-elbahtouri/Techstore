@@ -16,24 +16,36 @@
 
   <nav class='nav'>
   <div class='right-nav'>
-    <h1>TechStore</h1>
-    
-    <div class="category">
-    <span class="nav-cat">Category <i class="fab fa-gitter"></i></span>
-    <div class="category-content">
-      <a href="#">cat</a>
-      <a href="#">cat</a>
-      <a href="#">cat</a>
-    </div>
+        <h1>TechStore</h1>
+        
+        <div class="category">
+        <span class="nav-cat">Category</span>
+        <div class="category-content">
+          <a href="#">cat</a>
+          <a href="#">cat</a>
+          <a href="#">cat</a>
+        </div>
 
-   
+      
+      </div>
+      
+      <span class='promo'>Promotions</span>
   </div>
+  <div class='left-side'>
+  <div class='search'>
+  <input type='text' />
+  <i class="fas fa-search mysearch"></i>
+  </div>
+
   
-   <span class='promo'>Promotions</span>
+
+ 
+  <a href="/baskets" > <i class="fas fa-shopping-basket"></i> </a>
+  <i class="fas fa-user"></i>
   </div>
   </nav>
   <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+  <p class="alert"><%= alert %></p>
 
     <%= yield %>
   </body>

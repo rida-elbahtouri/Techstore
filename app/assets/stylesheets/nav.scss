@@ -2,6 +2,12 @@
  .nav{
     overflow: hidden;
     background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding: 0 5px;
+
   }
   .nav a {
     float: left;
@@ -12,19 +18,60 @@
     text-decoration: none;
   }
   
-  .right-nav {
+  .left-side ,.right-nav {
     display: flex;
     flex-wrap: nowrap;
+    align-items: center;
+    h1 {
+      margin: 0;
+    }
     .promo {
       margin-left: 10px;
       margin-right: 20px;
-      padding-top: 27px;
+      cursor: pointer;
     }
   }
+.left-side {
+  *{
+    margin-right: 10px;
+  }
+  input {
+    height: 30px;
+    margin-right: 0;
+    border: none;
+    border: 1px solid rgb(121, 121, 121);
+    box-sizing: border-box;
+    padding-left: 5px;
+  }
+  a {
+    cursor: pointer;
+  }
+  a:focus,a:active , a:visited {
+    border: none;
+  }
+}
+.search {
+  display: flex;
+  align-items: center;
+}
+.mysearch{
+  margin:0;
+  border: 1px solid rgb(121, 121, 121);
+  border-left: none;
+  box-sizing: border-box;
+  height: 30px;
+  width: 40px !important;
+  padding: 0 10px;
+  color: black;
+  cursor: pointer;
+}
+.mysearch:hover{
+  color:white;
+  background-color: black;
+}
   .category {
     float: left;
     overflow: hidden;
-    padding-top: 27px;
     margin-left: 20px;
   }
   
@@ -40,7 +87,9 @@
     margin: 0; 
   }
   
- 
+ .nav-cat:hover {
+   color: gray;
+ }
   
   .category-content {
     display: none;
@@ -68,3 +117,7 @@
   .category:hover .category-content {
     display: block;
   } 
+
+  .basket {
+    cursor: pointer;
+  }
