@@ -8,6 +8,8 @@ class OrdersController < ApplicationController
         user= User.find(current_user.id)
         user.baskets.each do |basket|
             pr=Product.find(basket.product_id)
+            pr.selletimes = pr.selletimes + basket.quantity
+            pr.save
             order=Order.new(seller_id:pr.seller_id,
             product_id:basket.product_id,
             quantity:basket.quantity,
