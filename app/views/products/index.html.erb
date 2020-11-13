@@ -1,4 +1,17 @@
 
+
+
+
+<div class = "mostselled">
+    <%= image(@mostselles) %>
+<div class ="product">
+<%= link_to @mostselles.name , product_path(@mostselles.id) %>
+<%= link_to "delete", product_path(@mostselles.id) ,method: :delete %> <br />
+ <button class="addtocard" value=<%= @mostselles.id %>  type='button'> add to card</button>
+ 
+ 
+</div>
+</div>
 <div class='products'>
 <% @products.each do |product| %>
 

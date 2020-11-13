@@ -11,7 +11,9 @@ class Product < ApplicationRecord
     validates :description, presence: true, length: { minimum: 20 }
     validates :price , presence: true
     validates :categ , presence: true
+    scope :mosts ,-> {Product.order("selletimes DESC").first}
     def avg
         (self.ratings.average(:stars)).to_f
     end
+
 end
