@@ -1,3 +1,17 @@
+.header-products {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 5px;
+}
+.mostselled {
+    background-color: rgb(20, 19, 19);
+    grid-column: 1/4;
+    img {
+        width: 100%;
+        position: relative;
+    }
+}
+
 .products {
     display: grid;
     grid-template-columns: repeat(4,1fr);

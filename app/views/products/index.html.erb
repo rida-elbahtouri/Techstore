@@ -1,27 +1,31 @@
 
 
 
-
+<div class="header-products">
 <div class = "mostselled">
     <%= image(@mostselles) %>
 <div class ="product">
 <%= link_to @mostselles.name , product_path(@mostselles.id) %>
-<%= link_to "delete", product_path(@mostselles.id) ,method: :delete %> <br />
- <button class="addtocard" value=<%= @mostselles.id %>  type='button'> add to card</button>
- 
- 
+<button class="addtocard" value=<%= @mostselles.id %>  type='button'> add to card</button>
 </div>
+
+</div>
+
+
+<div>
+
+</div>
+
+
 </div>
 <div class='products'>
 <% @products.each do |product| %>
-
 
 <div class='product-card'>
 <%= image(product) %>
 <div class ="product">
 <%= link_to product.name , product_path(product.id) %>
-<%= link_to "delete", product_path(product.id) ,method: :delete %> <br />
- <button class="addtocard" value=<%= product.id %>  type='button'> add to card</button>
+<button class="addtocard" value=<%= product.id %>  type='button'> add to card</button>
  
  
 </div>
