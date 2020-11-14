@@ -64,3 +64,23 @@
     display: flex;
     justify-content: space-between;
 }
+.oldprice {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    color: gray;
+    text-decoration-color: darkgray;
+}
+.percentage {
+    font-size: 16px;
+    font-weight: bold;
+    color: darkgreen;
+}
+.newprice {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.price-change {
+    display: grid;
+    grid-template: 1fr;
+}
