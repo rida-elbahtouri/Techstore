@@ -1,11 +1,11 @@
 class Product < ApplicationRecord
     belongs_to :seller ,class_name:"User"
 
-    has_many :comments
-    has_many :ratings
+    has_many :comments , dependent: :destroy
+    has_many :ratings , dependent: :destroy
 
-    has_many :baskets
-    has_many :customers, through: :baskets,foreign_key: "customer_id"
+    has_many :baskets, dependent: :destroy
+    has_many :customers, through: :baskets,foreign_key: "customer_id", dependent: :destroy
 
     validates :name, presence: true, length: { minimum: 2, maximum: 20 }
     validates :description, presence: true, length: { minimum: 20 }
