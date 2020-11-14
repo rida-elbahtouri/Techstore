@@ -42,10 +42,10 @@ const CreateAdToCardForm = (data,id,method,action) =>{
 addtocard.forEach(btn=>{
     btn.addEventListener('click',(e)=>{
         renderForm.style.display="block"
-        fetch(`/productscard/${e.target.value}`)
+        fetch(`/productscard/${btn.value}`)
         .then((data) => data.json())
         .then((data) => {
-            CreateAdToCardForm(data,e.target.value,"post","/baskets")
+            CreateAdToCardForm(data,btn.value,"post","/baskets")
         });
 })
 })

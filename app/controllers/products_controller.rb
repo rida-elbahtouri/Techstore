@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
         @hurryup = Product.all.hurryup
         @products = Product.all
     end
+
     def show
         @product = Product.find(params[:id])
     end

@@ -19,9 +19,12 @@
     <%= image(product) %>
     <div class ="product">
     <%= link_to product.name , product_path(product.id) %>
-    <%= link_to "delete", product_path(product.id) ,method: :delete %> <br />
-    <button class="addtocard" value=<%= product.id %>  type='button'> add to card</button>
-</div>
+    
+<p><%= product.description[0..100] %></p>
+<div class="buttom-card">
+<span><%= product.price %> $</span>
+<button class="addtocard" value=<%= product.id %>  type='button'><i class="fas fa-cart-plus"></i></button>
+</div></div>
 </div>
 
 <% end %>
@@ -36,8 +39,13 @@
 <%= image(product) %>
 <div class ="product">
 <%= link_to product.name , product_path(product.id) %>
-<%= link_to "delete", product_path(product.id) ,method: :delete %> <br />
-<button class="addtocard" value=<%= product.id %>  type='button'> add to card</button>
+<p><%= product.description[0..100] %></p>
+<div class="buttom-card">
+<span><%= product.price %> $</span>
+<button class="addtocard" value=<%= product.id %>  type='button'><i class="fas fa-cart-plus"></i></button>
+</div>
+
+
  
  
 </div>
