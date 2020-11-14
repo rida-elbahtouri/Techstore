@@ -12,6 +12,8 @@ class Product < ApplicationRecord
     validates :price , presence: true
     validates :categ , presence: true
     scope :mosts ,-> {Product.order("selletimes DESC").first}
+    scope :hurryup, -> {Product.order("promotion DESC").limit(4)}
+
     def avg
         (self.ratings.average(:stars)).to_f
     end
