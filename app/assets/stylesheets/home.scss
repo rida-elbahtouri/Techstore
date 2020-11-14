@@ -7,6 +7,7 @@
     display: grid;
     grid-template-columns: repeat(5,1fr);
     grid-gap: 5px;
+    margin-bottom: 10px;
 }
 .mostselled {
     background-color: rgb(20, 19, 19);
@@ -16,7 +17,15 @@
         position: relative;
     }
 }
-
+.hurryup-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    grid-column: 4/6;
+    h1 {
+        grid-column: 1/3;
+    }
+}
 .products {
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -27,6 +36,7 @@
     
     img{
         width: 100%;
+        height: 25vh;
     }
     a {
         text-decoration: none;

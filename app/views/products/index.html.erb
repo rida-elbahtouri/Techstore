@@ -12,8 +12,19 @@
 </div>
 
 
-<div>
+<div class="hurryup-section">
+<h1>Hurry Up</h1>
+<% @hurryup.each do |product| %>
+<div class='product-card'>
+    <%= image(product) %>
+    <div class ="product">
+    <%= link_to product.name , product_path(product.id) %>
+    <%= link_to "delete", product_path(product.id) ,method: :delete %> <br />
+    <button class="addtocard" value=<%= product.id %>  type='button'> add to card</button>
+</div>
+</div>
 
+<% end %>
 </div>
 
 

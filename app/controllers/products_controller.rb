@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
     before_action :authenticate_user!
     def index
         @mostselles = Product.all.mosts
+        @hurryup = Product.all.hurryup
         @products = Product.all
     end
     def show
