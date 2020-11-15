@@ -36,7 +36,7 @@ const CreateAdToCardForm = (data,id,basketID) =>{
     btn.className = 'btn';
     btn.type="submit"
     btn.value = "edit To Card";
-    btn.onclick=(e)=>updatebasket(e,quantity.value,id,basketID,qunt,total,data.price)
+    btn.onclick=(e)=>updatebasket(e,quantity.value,id,basketID,qunt,total,data.price,data.promotion)
     edit.appendChild(btn);
 }
 editCard.forEach(btn=>{
@@ -52,16 +52,16 @@ editCard.forEach(btn=>{
 })
 })
 
-const updatebasket=(e,qunt,productId,BasketId,quntel,total,price)=>{
+const updatebasket=(e,qunt,productId,BasketId,quntel,total,price,promo)=>{
     e.preventDefault()
     fetch(`/baskets/${BasketId}`,
     {method: 'PATCH',
     body: JSON.stringify({id:parseInt(BasketId), product_id: parseInt(productId),quantity:parseInt(qunt) }),
     headers: {"Content-type": "application/json; charset=UTF-8"}})
     .then(renderForm.style.display="none",
-          cardtotal.innerHTML = parseInt(cardtotal.innerHTML)+parseInt((qunt*price)-(quntel.innerHTML*price)),
+          cardtotal.innerHTML = parseInt(cardtotal.innerHTML)+parseInt((qunt*(price - (price*promo)/100))-(quntel.innerHTML*(price - (price*promo)/100))),
           quntel.innerHTML=qunt,
-          total.innerHTML=qunt*price,
+          total.innerHTML=qunt*(price - (price*promo)/100),
           
     )
 }

@@ -52,7 +52,7 @@ class ProductsController < ApplicationController
     
     def productdata
         product = Product.find(params[:id])
-        render json: product ,only: [:name,:price]
+        render json: product ,only: [:name,:price,:promotion]
     end
 
     private
