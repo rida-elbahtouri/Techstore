@@ -5,7 +5,7 @@ class BasketsController < ApplicationController
         @baskets = current_user.baskets
         @sum = 0
         @baskets.each do |b|
-            @sum += (b.quantity * b.product.price)
+            @sum += (b.quantity * (b.product.price - (b.product.price * b.product.promotion)/100))
         end
     end
 

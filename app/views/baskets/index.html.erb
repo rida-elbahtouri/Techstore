@@ -7,9 +7,9 @@
 <% @baskets.each do |basket| %>
 
 <p> <%= link_to basket.product.name , product_path(basket.product.id) %></p>
-<p> <%= basket.product.price%> </p>
+<p> <%=  basket.product.price - (basket.product.price * basket.product.promotion)/100 %> </p>
 <p id=<%= basket.id %> >  <%= basket.quantity %></p>
-<p id="totalfor<%= basket.id %>" > <%= basket.quantity*basket.product.price  %> </p>
+<p id="totalfor<%= basket.id %>" > <%= basket.quantity*(basket.product.price - (basket.product.price * basket.product.promotion)/100 )  %> </p>
 <div>
 <%= button_to  "delete", basket_path(basket.id),method: :delete %>
 <button class="editcard" value="<%= basket.id %>/<%=basket.product.id%>">edit</button>
