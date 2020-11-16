@@ -72,6 +72,19 @@
     display: grid;
     grid-template-columns: repeat(5,1fr);
     grid-gap: 10px;
+
+    h2 {
+        grid-column: 1/-1;
+        color:#4E89FF ;
+        margin-bottom: 0;
+
+        .hotselles {
+            color: rgb(255, 166, 0);
+        }
+        .fire {
+            color: #F13864;
+        }
+    }
 }
 .product-card{
     border: 1px solid gray;
@@ -138,4 +151,34 @@
 .price-change {
     display: grid;
     grid-template: 1fr;
+}
+
+.footer {
+    background-color: black;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    div {
+        width: 50%;
+    }
+    h3 {
+        color: gray;
+        margin: 0;
+    }
+    p {
+        color: white;
+        margin: 0;
+        font-size: 16px;
+        font-weight: normal;
+    }
+}
+.footer-links {
+    text-align: center;
+    a {
+        
+        text-decoration: none;
+        color: white;
+    }
 }

@@ -11,7 +11,7 @@ class Product < ApplicationRecord
     validates :description, presence: true, length: { minimum: 20 }
     validates :price , presence: true
     validates :categ , presence: true
-    scope :mosts ,-> {Product.order("selletimes DESC").first}
+    scope :mosts ,-> {Product.order("selletimes DESC").limit(5)}
     scope :hurryup, -> {Product.order("promotion DESC").limit(4)}
 
     def avg
