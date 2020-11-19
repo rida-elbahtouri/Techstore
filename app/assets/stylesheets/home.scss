@@ -9,6 +9,13 @@
     grid-gap: 5px;
     margin-bottom: 10px;
 }
+.prlogo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.prlogo:hover {
+    color:#F13864;
+}
 .mostselled {
     background-color: rgb(20, 19, 19);
     grid-column: 1/4;
@@ -156,6 +163,7 @@
 .footer {
     background-color: black;
     display: flex;
+    
     flex-wrap: nowrap;
     justify-content: space-between;
     padding: 20px;
