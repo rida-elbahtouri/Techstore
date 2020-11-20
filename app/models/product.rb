@@ -17,5 +17,18 @@ class Product < ApplicationRecord
     def avg
         (self.ratings.average(:stars)).to_f
     end
+    
+    def ratingsstatic
+        one  = ratings.where(stars:1).count
+        two  = ratings.where(stars:2).count
+        three  = ratings.where(stars:3).count
+        four  = ratings.where(stars:4).count
+        five  = ratings.where(stars:5).count
 
+        return {one: one,       
+            two:  two, 
+            three:  three  , 
+            four:    four,   
+            five:  five }
+    end
 end

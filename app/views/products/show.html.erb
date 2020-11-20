@@ -20,6 +20,14 @@
 <div class="reviews">
 
 <div class="statics">
+    <h1>Product rating</h1>
+    <p>one star : <%= @product.ratingsstatic[:one]  %> </p>
+    <p>two star : <%= @product.ratingsstatic[:two]  %> </p>
+    <p>three star : <%= @product.ratingsstatic[:three]  %> </p>
+    <p>four star : <%= @product.ratingsstatic[:four]  %> </p>
+    <p>five star : <%= @product.ratingsstatic[:five]  %> </p>
+
+
     <h1>Seller details</h1>
     <p>Adress: <%= @product.seller.sel_detail.shipping_adress %>  </p>
     <p>Number of Poducts:<%= @product.seller.static[:nproducts] %> </p>
