@@ -7,6 +7,18 @@ $blue : #4E89FF;
 }
 .left-produt {
     grid-column: 1/2;
+
+    img {
+        width: 100%;
+    }
+    .pro_price {
+        font-size: 24px;
+        color: $red;
+        .newprice {
+            font-size: 24px;
+            color: $red;
+        }
+    }
 }
 .right-product {
     grid-column: 2/4;
@@ -21,4 +33,22 @@ $blue : #4E89FF;
         width: 70%;
         font-size: 18px;
     }
+}
+
+.reviews {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.comments{
+    grid-column: 2/4;
+}
+.commenter {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.comment {
+    margin-top: 0;
+    font-size: 16px;
 }

@@ -1,7 +1,7 @@
 <div class="productpage-grid">
     <div class="left-produt">
     <%= image(@product) %>
-    <%= @product.price %><br />
+    <span class="pro_price"> <%= promotion(@product) %></span>
     
     <div  >
     <input id="product-stars"  type="hidden" value=<%= @product.avg %> />
@@ -17,6 +17,21 @@
     <p class="pro_descr"> <%= @product.description %></p>
     </div>
 </div>
+<div class="reviews">
 
-
+<div class="statics">
+    <h1>Seller details</h1>
+    <p>Adress: hsds sdefhoef skdhf  </p>
+    <p>Number of Poducts:5 </p>
+    <p>Number of selles:10 </p>
+    <p> Seller rating:4 </p>
+</div>
+<div class="comments">
+<h1>Customers review</h1>
+    <% @comments.each do |cm| %>
+        <p class="commenter"><%= cm.customer.name %></p>
+       <p class="comment"> <%= cm.content %></p>
+    <% end %>
+</div>
+</div>
 <%= javascript_pack_tag 'productpage' %>
