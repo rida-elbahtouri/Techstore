@@ -38,17 +38,40 @@ $blue : #4E89FF;
 .reviews {
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    border-top: 1px solid gainsboro;
+    margin-top: 15px;
+}
+.statics {
+    h1 {
+        font-size: 24px;
+        color: $blue;
+    }
 }
 .comments{
     grid-column: 2/4;
+    border-left: 1px solid gainsboro;
+    padding-left: 10px;
+    h1 {
+        font-size: 24px;
+        color: $blue;
+    }
+}
+.comment-cont {
+    border: 1px solid gray;
+    border-top: none;
+    border-right: none;
+    border-radius: 10px;
+    padding:5px;
+    margin:15px 0;
 }
 .commenter {
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .comment {
-    margin-top: 0;
+    margin: 0;
+    margin-top: 3px;
     font-size: 16px;
 }

@@ -21,16 +21,29 @@
 
 <div class="statics">
     <h1>Seller details</h1>
-    <p>Adress: hsds sdefhoef skdhf  </p>
-    <p>Number of Poducts:5 </p>
-    <p>Number of selles:10 </p>
-    <p> Seller rating:4 </p>
+    <p>Adress: <%= @product.seller.sel_detail.shipping_adress %>  </p>
+    <p>Number of Poducts:<%= @product.seller.static[:nproducts] %> </p>
+    <p>Number of selles:<%= @product.seller.static[:selles] %> </p>
 </div>
 <div class="comments">
 <h1>Customers review</h1>
     <% @comments.each do |cm| %>
+    <div class="comment-cont">
         <p class="commenter"><%= cm.customer.name %></p>
        <p class="comment"> <%= cm.content %></p>
+    </div>
+    <% end %>
+     <% @comments.each do |cm| %>
+    <div class="comment-cont">
+        <p class="commenter"><%= cm.customer.name %></p>
+       <p class="comment"> <%= cm.content %></p>
+    </div>
+    <% end %>
+     <% @comments.each do |cm| %>
+    <div class="comment-cont">
+        <p class="commenter"><%= cm.customer.name %></p>
+       <p class="comment"> <%= cm.content %></p>
+    </div>
     <% end %>
 </div>
 </div>
