@@ -85,8 +85,11 @@
     background-color: inherit;
     font-family: inherit; 
     margin: 0; 
-  }
   
+  }
+  .nav-cat {
+    cursor: default;
+  }
  .nav-cat:hover {
    color: gray;
  }

@@ -1,4 +1,22 @@
-<%= @product.name %><br />
-<%= @product.description %><br />
-<%= @product.price %><br />
-<%= @product.avg %>
+<div class="productpage-grid">
+    <div class="left-produt">
+    <%= image(@product) %>
+    <%= @product.price %><br />
+    
+    <div  >
+    <input id="product-stars"  type="hidden" value=<%= @product.avg %> />
+    <i class="fas fa-star star1 star2 star3 star4 star5"></i>
+    <i class="fas fa-star star2 star3 star4 star5"></i>
+    <i class="fas fa-star star3 star4 star5"></i>
+    <i class="fas fa-star star4 star5"></i>
+    <i class="fas fa-star star5"></i>
+    </div>
+    </div>
+    <div class="right-product">
+    <span class="pro_name">  <%= @product.name %> </span>
+    <p class="pro_descr"> <%= @product.description %></p>
+    </div>
+</div>
+
+
+<%= javascript_pack_tag 'productpage' %>
