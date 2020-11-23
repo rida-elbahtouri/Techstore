@@ -19,10 +19,7 @@
      margin: 0;
      padding: 0;
  }
-.basket{
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-}
+
 .tootal {
     grid-column: 4/6;
 }
