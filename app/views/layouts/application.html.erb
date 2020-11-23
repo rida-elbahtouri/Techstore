@@ -32,10 +32,12 @@
       <span class='promo'>Promotions</span>
   </div>
   <div class='left-side'>
-  <div class='search'>
-  <input type='text' />
-  <i class="fas fa-search mysearch"></i>
-  </div>
+
+  <%= form_tag('/search',method: :get ,:class => 'search') do %>
+  <%= text_field_tag(:term,nil, placeholder: 'search term ...') %>
+  <%= submit_tag("Search" ,class:"mysearch") %>
+  <% end %>
+ 
 
   
 

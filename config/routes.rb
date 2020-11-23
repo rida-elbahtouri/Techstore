@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :orders
 
   get '/category/:cat',to: "products#category"
+  get '/search',to: "products#search",as: :search
   get '/productscard/:id',to: "products#productdata"
   # get '/details/both',to: "userdetails#new_both"
   # get '/details/customer',to: "userdetails#new_customer"

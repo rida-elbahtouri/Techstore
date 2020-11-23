@@ -55,7 +55,7 @@ class ProductsController < ApplicationController
     def category
         @products = Product.all.where(categ: params[:cat]).order("selletimes DESC").limit(10)
     end
-    def searsh
+    def search
         @products = Product.all.searsh("%#{params[:term]}%")
     end
     def productdata
