@@ -31,4 +31,5 @@ class Product < ApplicationRecord
             four:    four,   
             five:  five }
     end
+
 end
