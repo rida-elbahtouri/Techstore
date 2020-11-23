@@ -5,7 +5,9 @@ $blue : #4E89FF;
 .basket{
     display: grid;
     grid-template-columns: repeat(5,1fr);
-
+    border-bottom: 2px solid rgb(180, 180, 180);
+    margin-bottom: 20px;
+    padding-bottom: 5px;
     p {
         margin: 0;
     }
@@ -64,5 +66,32 @@ width: 50%;
     }
     .edit-item:hover {
         color: $blue;
+    }
+}
+.basket-total {
+    display: flex;
+    padding-top: 20px;
+    
+    h2 {
+        margin: 0;
+        color: $blue;
+        margin-right: 20px;
+        margin-left: auto;
+    }
+
+    .checkout {
+        border: none;
+        background-color: $red;
+        color: white;
+        padding: 5px;
+        font-weight: bold;
+        border: 1px solid $red;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .checkout:hover {
+        color: $red;
+        background-color: white;
+        border: 1px solid $red;
     }
 }

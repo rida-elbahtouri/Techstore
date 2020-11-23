@@ -29,9 +29,10 @@
 </div>
 </div>
 <% end %>
-
-<h2 id="cardtotal"> <%= @sum %> </h2>
-<%= button_to  "Checkout", orders_path(customer_id:current_user.id),method: :post %>
+<div class="basket-total">
+<h2 id="cardtotal"> <%= @sum %> $</h2>
+<%= button_to  "Checkout", orders_path(customer_id:current_user.id),method: :post,class: "checkout" %>
+</div>
 <div id="renderForm" class="addcardform" ></div>
 
 
