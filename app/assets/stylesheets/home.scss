@@ -1,3 +1,5 @@
+$red : #F13864;
+$blue : #4E89FF;
 .container {
     max-width: 1600px;
     margin: 0 auto;
@@ -106,8 +108,22 @@
     }
     a {
         text-decoration: none;
-        color: inherit;
+        color: $blue;
     }
+}
+.visit-basket {
+    font-weight: bold;
+    height: 25px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: gold;
+    font-size: 16px;
+    color: $blue;
+}
+
+.visit-basket:hover {
+    background-color: $blue;
+    color: gold;
 }
 .product {
     padding: 10px;

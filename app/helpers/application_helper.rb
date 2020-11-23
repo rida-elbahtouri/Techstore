@@ -16,4 +16,15 @@ module ApplicationHelper
             content_tag(:span, "#{product.price} $")
         end
     end
+
+    def addorgotobasket(product)
+        @product = product
+        basketproducts = current_user.baskets.pluck(:product_id)
+
+        if basketproducts.include?(product.id)
+            link_to "See Basket", baskets_path,class:"visit-basket"
+        else
+            render "products/addtocardbutton"
+        end
+    end
 end

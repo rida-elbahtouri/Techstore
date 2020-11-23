@@ -27,7 +27,7 @@
  
     <div class="buttom-card">
         <span><%= promotion(product) %></span>
-        <button class="addtocard" value=<%= product.id %>  type='button'><i class="fas fa-cart-plus"></i></button>
+        <%= addorgotobasket(product)%>
     </div>
 
   </div>
@@ -49,7 +49,7 @@
 <p><%= product.description[0..100] %></p>
 <div class="buttom-card">
 <span><%= promotion(product) %> </span>
-<button class="addtocard" value=<%= product.id %>  type='button'><i class="fas fa-cart-plus"></i></button>
+<%= addorgotobasket(product)%>
 </div>
 
 
@@ -72,7 +72,7 @@
 <p><%= product.description[0..100] %></p>
 <div class="buttom-card">
 <span><%= promotion(product) %> </span>
-<button class="addtocard" value=<%= product.id %>  type='button'><i class="fas fa-cart-plus"></i></button>
+<%= addorgotobasket(product)%>
 </div>
 
 

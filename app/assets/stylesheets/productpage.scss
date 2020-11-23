@@ -75,3 +75,17 @@ $blue : #4E89FF;
     margin-top: 3px;
     font-size: 16px;
 }
+.visit-basket {
+    font-weight: bold;
+    height: 25px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: gold;
+    font-size: 16px;
+    color: $blue;
+}
+
+.visit-basket:hover {
+    background-color: $blue;
+    color: gold;
+}
