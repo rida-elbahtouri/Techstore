@@ -1,15 +1,1 @@
-<div class="products-result">
-<% @products.each do |product| %>
-<div class='product-card'>
-        <%= image(product) %>
-        <div class ="product">
-                <%= link_to product.name , product_path(product.id) %>
-                <p><%= product.description[0..100] %></p>
-                <div class="buttom-card">
-                    <span><%= promotion(product) %> </span>
-                    <%= addorgotobasket(product)%>
-                </div>
-        </div>
-</div>
-<% end %>
-</div>
+<%= results(@products) %>

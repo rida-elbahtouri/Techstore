@@ -55,7 +55,9 @@ class ProductsController < ApplicationController
     def category
         @products = Product.all.where(categ: params[:cat]).order("selletimes DESC").limit(10)
     end
-    
+    def searsh
+        @products = Product.all.searsh("%#{params[:term]}%")
+    end
     def productdata
         product = Product.find(params[:id])
         render json: product ,only: [:name,:price,:promotion]

@@ -13,6 +13,7 @@ class Product < ApplicationRecord
     validates :categ , presence: true
     scope :mosts ,-> {Product.order("selletimes DESC").limit(5)}
     scope :hurryup, -> {Product.order("promotion DESC").limit(4)}
+    scope :searsh, -> (term) {where("name LIKE ? OR description LIKE ?", term,term)}
 
     def avg
         (self.ratings.average(:stars)).to_f

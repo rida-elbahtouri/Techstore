@@ -27,4 +27,9 @@ module ApplicationHelper
             render "products/addtocardbutton"
         end
     end
+
+    def results(products)
+        @products = products
+        render "products/results"
+    end
 end
