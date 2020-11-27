@@ -1,68 +1,72 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>TechStore</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-   
+
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-  <body>
+<body>
 
-  <nav class='nav'>
-  <div class='right-nav'>
-        <%= link_to  "TechStore", root_path ,class:"prlogo" %>
-        
-        <div class="category">
-        <span class="nav-cat">Category</span>
-        <div class="category-content">
-          <a href="/category/computer">Computers</a>
-           <a href="/category/general">General</a>
-           <a href="/category/monitors">Monitors</a>
-            <a href="/category/components">Components</a>
-            <a href="/category/others">Others</a>
+    <nav class='nav'>
+        <div class='right-nav'>
+            <%= link_to  "TechStore", root_path ,class:"prlogo" %>
+
+            <div class="category">
+                <span class="nav-cat">Category</span>
+                <div class="category-content">
+                    <a href="/category/computer">Computers</a>
+                    <a href="/category/general">General</a>
+                    <a href="/category/monitors">Monitors</a>
+                    <a href="/category/components">Components</a>
+                    <a href="/category/others">Others</a>
+                </div>
+            </div>
+
+            <span class='promo'>Promotions</span>
         </div>
-      </div>
-      
-      <span class='promo'>Promotions</span>
-  </div>
-  <div class='left-side'>
+        <div class='left-side'>
 
-  <%= form_tag('/search',method: :get ,:class => 'search') do %>
-  <%= text_field_tag(:term,nil, placeholder: 'search term ...') %>
-  <%= submit_tag("Search" ,class:"mysearch") %>
-  <% end %>
- 
+            <%= form_tag('/search',method: :get ,:class => 'search') do %>
+            <%= text_field_tag(:term,nil, placeholder: 'search term ...') %>
+            <%= submit_tag("Search" ,class:"mysearch") %>
+            <% end %>
 
-  
 
- 
-  <a href="/baskets" > <i class="fas fa-shopping-basket"></i> </a>
-  <i class="fas fa-user"></i>
-  </div>
-  </nav>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <div class="container">
-    <%= yield %>
-  </div>
-  <footer class="footer">
-  <div>
-    <h3>About us<h3>
-    <p>We are a Teshstore that provide new product and delevier to home service and paying always when you get the product with a max of 15 days to deliver</p>
+
+
+
+            <a href="/baskets"> <i class="fas fa-shopping-basket"></i> </a>
+            <i class="fas fa-user"></i>
+        </div>
+    </nav>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div class="wraper">
+        <div class="container">
+            <%= yield %>
+        </div>
+        <footer class="footer">
+            <div>
+                <h3>About us<h3>
+                        <p>We are a Teshstore that provide new product and delevier to home service and paying always when you get the product with a max of 15 days to deliver</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Get in touch</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Facebook</a>
+                <a href="#">Facebook</a>
+            </div>
+        </footer>
     </div>
+</body>
 
-    <div class="footer-links">
-    <h3>Get in touch</h3>
-      <a href="#">Facebook</a>
-      <a href="#">Facebook</a>
-      <a href="#">Facebook</a>
-    </div>
-  </footer>
-  </body>
 </html>

@@ -18,8 +18,12 @@
  body {
      margin: 0;
      padding: 0;
+   
  }
-
+.wraper{
+      min-height: 100vh;
+     position: relative;
+}
 .tootal {
     grid-column: 4/6;
 }
