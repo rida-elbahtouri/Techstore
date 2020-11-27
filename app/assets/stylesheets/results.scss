@@ -1,0 +1,40 @@
+$red : #F13864;
+$blue : #4E89FF;
+
+.products-result {
+    display: grid;
+}
+.product_result_card {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border-bottom: 2px solid rgb(185, 185, 185);
+    padding: 10px;
+    margin: 5px;
+     .img {
+         grid-column: 1/2;
+         width: 100%;
+         max-height: 30vh;
+     }
+
+   
+}
+
+.product-info_result {
+    grid-column: 2/-1;
+    padding-left: 10px;
+    a {
+        font-size: 22px;
+        text-transform: capitalize;
+        font-weight: bold;
+        color: $blue;
+        text-decoration: none;
+    }
+    p {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: $red;
+    }
+}

@@ -1,0 +1,77 @@
+$red : #F13864;
+$blue : #4E89FF;
+.productpage-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+}
+.left-produt {
+    grid-column: 1/2;
+
+    img {
+        width: 100%;
+    }
+    .pro_price {
+        font-size: 24px;
+        color: $red;
+        .newprice {
+            font-size: 24px;
+            color: $red;
+        }
+    }
+}
+.right-product {
+    grid-column: 2/4;
+
+    .pro_name {
+        font-size: 24px;
+        font-weight: bold;
+        color:$blue ;
+    }
+
+    .pro_descr {
+        width: 70%;
+        font-size: 18px;
+    }
+}
+
+.reviews {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    border-top: 1px solid gainsboro;
+    margin-top: 15px;
+}
+.statics {
+    h1 {
+        font-size: 24px;
+        color: $blue;
+    }
+}
+.comments{
+    grid-column: 2/4;
+    border-left: 1px solid gainsboro;
+    padding-left: 10px;
+    h1 {
+        font-size: 24px;
+        color: $blue;
+    }
+}
+.comment-cont {
+    border: 1px solid gray;
+    border-top: none;
+    border-right: none;
+    border-radius: 10px;
+    padding:5px;
+    margin:15px 0;
+}
+.commenter {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.comment {
+    margin: 0;
+    margin-top: 3px;
+    font-size: 16px;
+}

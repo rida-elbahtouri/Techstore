@@ -1,0 +1,17 @@
+<div class="profile_products">
+    <h2>My products</h2>
+    <% current_user.goods.each do |product| %>
+    <div class='product-card'>
+        <%= image(product) %>
+        <div class="product">
+            <%= link_to product.name , product_path(product.id) %>
+            <p><%= product.description[0..100] %></p>
+            <div class="buttom-card">
+                <span><%= promotion(product) %> </span>
+                <span> Number of selles : <%= product.selletimes%> </span>
+            </div>
+        </div>
+    </div>
+    <% end %>
+
+</div>

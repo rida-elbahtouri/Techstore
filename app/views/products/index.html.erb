@@ -1,3 +1,90 @@
-<% @products.each do |product| %>
-<%= product.name%>
+
+
+
+<div class="header-products">
+<div class = "mostselled">
+    <%= image(@mostselles) %>
+<div class ="header-product">
+<%= link_to @mostselles.name , product_path(@mostselles.id) %>
+<p><%= @mostselles.description[0..120] %>...(<%= link_to "learn more", product_path(@mostselles.id) %>)</p>
+  <div class="buttom-card">
+        <span><%= promotion(@mostselles) %></span>
+        <button class="addtocard" value=<%= @mostselles.id %>  type='button'><i class="fas fa-cart-plus"></i></button>
+    </div>
+</div>
+
+</div>
+
+
+<div class="hurryup-section">
+<h1>Hurry Up</h1>
+<% @hurryup.each do |product| %>
+<div class='product-card'>
+  <%= image(product) %>
+  <div class ="product">
+  <span class="hurry-promotion-per"> -<%= product.promotion%>%</span>
+    <%= link_to product.name , product_path(product.id) %>
+ 
+    <div class="buttom-card">
+        <span><%= promotion(product) %></span>
+        <%= addorgotobasket(product)%>
+    </div>
+
+  </div>
+</div>
+
 <% end %>
+</div>
+
+
+</div>
+<div class='products'>
+<h2> <i class="fas fa-crown hotselles"></i> Hot Products</h2>
+<% @hotselles.each do |product| %>
+
+<div class='product-card'>
+<%= image(product) %>
+<div class ="product">
+<%= link_to product.name , product_path(product.id) %>
+<p><%= product.description[0..100] %></p>
+<div class="buttom-card">
+<span><%= promotion(product) %> </span>
+<%= addorgotobasket(product)%>
+</div>
+
+
+ 
+ 
+</div>
+</div>
+<% end %>
+</div>
+
+
+<div class='products'>
+<h2><i class="fab fa-hotjar fire"></i> New in Stocks</h2>
+<% @products.each do |product| %>
+
+<div class='product-card'>
+<%= image(product) %>
+<div class ="product">
+<%= link_to product.name , product_path(product.id) %>
+<p><%= product.description[0..100] %></p>
+<div class="buttom-card">
+<span><%= promotion(product) %> </span>
+<%= addorgotobasket(product)%>
+</div>
+
+
+ 
+ 
+</div>
+</div>
+
+<% end %>
+
+
+<div id="renderForm" class="addcardform" ></div>
+</div>
+
+<%= javascript_pack_tag 'addtocard' %>

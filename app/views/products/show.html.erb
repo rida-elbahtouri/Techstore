@@ -1,0 +1,54 @@
+<div class="productpage-grid">
+    <div class="left-produt">
+    <%= image(@product) %>
+    <span class="pro_price"> <%= promotion(@product) %></span>
+    
+    <div  >
+    <input id="product-stars"  type="hidden" value=<%= @product.avg %> />
+    <i class="fas fa-star star1 star2 star3 star4 star5"></i>
+    <i class="fas fa-star star2 star3 star4 star5"></i>
+    <i class="fas fa-star star3 star4 star5"></i>
+    <i class="fas fa-star star4 star5"></i>
+    <i class="fas fa-star star5"></i>
+    </div>
+    </div>
+    <div class="right-product">
+    <span class="pro_name">  <%= @product.name %> </span>
+    <p class="pro_descr"> <%= @product.description %></p>
+    </div>
+</div>
+<div class="reviews">
+
+<div class="statics">
+    <h1>Product rating</h1>
+    <p>one star : <%= @product.ratingsstatic[:one]  %> </p>
+    <p>two star : <%= @product.ratingsstatic[:two]  %> </p>
+    <p>three star : <%= @product.ratingsstatic[:three]  %> </p>
+    <p>four star : <%= @product.ratingsstatic[:four]  %> </p>
+    <p>five star : <%= @product.ratingsstatic[:five]  %> </p>
+
+
+    <h1>Seller details</h1>
+    <p>Adress: <%= @product.seller.sel_detail.shipping_adress %>  </p>
+    <p>Number of Poducts:<%= @product.seller.static[:nproducts] %> </p>
+    <p>Number of selles:<%= @product.seller.static[:selles] %> </p>
+</div>
+<div class="comments">
+<h1>Customers review</h1>
+
+    <div class="comment-cont">
+        <%= form_for(@product.comments.new, url: comments_path(@product))  do |f| %>
+            <p class="commenter"> <%= current_user.name %> </p>
+            <%= f.text_area(:content, size: '50x10') %>
+            <%= f.submit "Submit" %>
+        <% end %>
+    </div>
+    <% @comments.each do |cm| %>
+    <div class="comment-cont">
+        <p class="commenter"><%= cm.customer.name %></p>
+       <p class="comment"> <%= cm.content %></p>
+    </div>
+    <% end %>
+</div>
+</div>
+<%= javascript_pack_tag 'productpage' %>
