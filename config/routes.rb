@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/category/:cat',to: "products#category"
   get '/search',to: "products#search",as: :search
   get '/productscard/:id',to: "products#productdata"
+  get 'profile',to: "users#show",as: :user
   # get '/details/both',to: "userdetails#new_both"
   # get '/details/customer',to: "userdetails#new_customer"
   # get '/details/seller',to: "userdetails#new_seller"

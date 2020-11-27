@@ -1,0 +1,13 @@
+<div class="profile">
+    <div class="profile_info">
+        <h2><%= current_user.name %></h2>
+        <p> <%= current_user.email %> </p>
+    </div>
+
+    <div class="profile_comments_container">
+        <h2>My comments</h2>
+        <% current_user.comments.each do |comment| %>
+        <p class="profile_comment"> <%= comment.content %> </p>
+        <% end %>
+    </div>
+    <div>

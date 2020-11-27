@@ -1,0 +1,27 @@
+.profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.profile_info {
+    grid-column: 1/-1;
+
+    h2 {
+        margin: 0;
+
+    }
+
+    p {
+        margin: 0;
+        color: rgb(156, 156, 156);
+    }
+}
+
+.profile_comment {
+    
+        font-weight: normal;
+        padding: 10px;
+        border: 1px solid rgb(204, 204, 204);
+        border-radius: 10px;
+}
+//<%= myselles(current_user) %>
