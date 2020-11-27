@@ -1,6 +1,7 @@
 .profile {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
 }
 
 .profile_info {
@@ -24,4 +25,12 @@
         border: 1px solid rgb(204, 204, 204);
         border-radius: 10px;
 }
-//<%= myselles(current_user) %>
+
+.profile_products {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 5px;
+    h2 {
+        grid-column: 1/-1;
+    }
+}
