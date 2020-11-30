@@ -1,3 +1,7 @@
+$red : #F13864;
+$blue : #4E89FF;
+
+
 .profile {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -31,6 +35,7 @@
     grid-template-columns: repeat(3,1fr);
     grid-gap: 5px;
     h2 {
+        color: $blue;
         grid-column: 1/-1;
     }
 }

@@ -5,9 +5,10 @@
         <%= image(product) %>
         <div class="product">
             <%= link_to product.name , product_path(product.id) %>
-            <p><%= product.description[0..100] %></p>
+
             <div class="buttom-card">
                 <span><%= promotion(product) %> </span>
+                <%= button_to  "remove promotion", product_path(product.id),:params => {product:{promotion: 0}} ,:method => :patch %>
                 <span> Number of selles : <%= product.selletimes%> </span>
             </div>
         </div>
