@@ -1,9 +1,6 @@
 $red : #F13864;
 $blue : #4E89FF;
 
-.img {
-    width: 100%;
-}
 
 .profile {
     display: grid;
@@ -34,11 +31,37 @@ $blue : #4E89FF;
 }
 
 .profile_products {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-gap: 5px;
+
     h2 {
         color: $blue;
         grid-column: 1/-1;
     }
+}
+.profile_product-card {
+display: grid;
+grid-template-columns: repeat(4,1fr);
+border-bottom: 2px solid rgb(185, 185, 185);
+padding: 10px;
+margin: 5px;
+ .img {
+     grid-column: 1/2;
+     width: 100%;
+     max-height: 30vh;
+ }
+}
+.remove_promotion {
+    background-color: #F13864;
+    color: white;
+    border: none;
+    border: 1px solid $red;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.remove_promotion:hover {
+    background-color: white;
+    color: $red;
+    border: 1px solid $red;
 }

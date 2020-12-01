@@ -1,16 +1,17 @@
 <div class="profile_products">
     <h2>My products</h2>
     <% current_user.goods.each do |product| %>
-    <div class='product-card'>
+    <div class='profile_product-card'>
         <%= image(product) %>
         <div class="product">
             <%= link_to product.name , product_path(product.id) %>
-            <span> Number of selles : <%= product.selletimes%> </span>
-            <div class="buttom-card">
+            <p> Number of selles : <%= product.selletimes%> </p>
+            <div>
                 <span><%= promotion(product) %> </span>
                 <% if product.promotion > 0 %>
-                <%= button_to  "remove promotion", product_path(product.id),:params => {product:{promotion: 0}} ,:method => :patch %>
+                <%= button_to  "remove promotion", product_path(product.id),:params => {product:{promotion: 0}} ,:method => :patch,class: "remove_promotion" %>
                 <% end %>
+                <br>
                 <%= link_to  "edit product", edit_product_path(product.id) ,class: "editcard edit-item"  %>
             </div>
         </div>
