@@ -3,8 +3,8 @@
     <% current_user.goods.each do |product| %>
     <div class='profile_product-card'>
         <%= image(product) %>
-        <div class="product">
-            <%= link_to product.name , product_path(product.id) %>
+        <div class="profile_product">
+            <%= link_to product.name , product_path(product.id) ,class: "product_link" %>
             <p> Number of selles : <%= product.selletimes%> </p>
             <div>
                 <span><%= promotion(product) %> </span>
@@ -12,7 +12,13 @@
                 <%= button_to  "remove promotion", product_path(product.id),:params => {product:{promotion: 0}} ,:method => :patch,class: "remove_promotion" %>
                 <% end %>
                 <br>
-                <%= link_to  "edit product", edit_product_path(product.id) ,class: "editcard edit-item"  %>
+
+                <%= link_to  product_path(product.id) ,method: :delete,class: "delete-item profile_icon" do %>
+                <i class="fas fa-times "></i>
+                <% end %>
+                <%= link_to  edit_product_path(product.id) ,class: "edit-item profile_icon" do %>
+                <i class="fas fa-pen "></i>
+                <% end %>
             </div>
         </div>
     </div>
