@@ -1,9 +1,29 @@
+$red : #F13864;
+$blue : #4E89FF;
+.myorder {
+    color: $red;
+}
+.order {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    border-bottom: 2px solid rgb(180, 180, 180);
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    p {
+        margin: 0;
+    }
+
+    .img {
+        width: 50%;
+    }
+}
 .order_row {
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(6,1fr);
     padding: 0;
     li {
         list-style: none;
         font-size: 24px;
+        color: $blue;
     }
 }

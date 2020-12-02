@@ -1,4 +1,4 @@
-<h1>My orders</h1>
+<h1 class="myorder">My orders</h1>
 
 <ul class="order_row">
     <li>Product</li>
@@ -8,7 +8,7 @@
     <li>Customer Adress</li>
 </ul>
 <% @orders.each do |order| %>
-<div class="basket">
+<div class="order">
     <div class="product-basket">
         <%= image(order.product) %>
         <p> <%= link_to order.product.name , product_path(order.product.id) %></p>
@@ -17,5 +17,7 @@
     <p id=<%= order.id %>> <%= order.quantity %></p>
     <p id="totalfor<%= order.id %>"> <%= order.quantity*(order.product.price - (order.product.price * order.product.promotion)/100 )  %> </p>
     <%= order.adress %>
+
+    <%= button_to  "delevired", order_path(order.id)  ,:params => {id: order.id } ,:method => :patch %>
 </div>
 <%end%>
