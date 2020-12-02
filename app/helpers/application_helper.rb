@@ -36,4 +36,9 @@ module ApplicationHelper
   def sellerprofile(user)
     render 'users/seller' if user.service == 'Both'
   end
+
+  def getperc(num,tot)
+    per = (num * 100)/tot
+    per
+  end
 end
