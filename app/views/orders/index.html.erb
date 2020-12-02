@@ -18,6 +18,6 @@
     <p id="totalfor<%= order.id %>"> <%= order.quantity*(order.product.price - (order.product.price * order.product.promotion)/100 )  %> </p>
     <%= order.adress %>
 
-    <%= button_to  "delevired", order_path(order.id)  ,:params => {id: order.id } ,:method => :patch,class: "delivered" %>
+    <%= button_to  "delevired", order_path(order.id)  ,:params => {id: order.id } ,:method => :patch,class: "bluebutton" %>
 </div>
 <%end%>

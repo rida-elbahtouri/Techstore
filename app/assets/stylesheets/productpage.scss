@@ -80,6 +80,14 @@ $blue : #4E89FF;
         color: $blue;
     }
 }
+.commentarea {
+    resize: none;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
 .comment-cont {
     border: 1px solid gray;
     border-top: none;

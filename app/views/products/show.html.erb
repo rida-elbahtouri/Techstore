@@ -74,8 +74,8 @@
         <div class="comment-cont">
             <%= form_for(@product.comments.new, url: comments_path(@product))  do |f| %>
             <p class="commenter"> <%= current_user.name %> </p>
-            <%= f.text_area(:content, size: '50x10') %>
-            <%= f.submit "Submit" %>
+            <%= f.text_area :content,placeholder: "write your comment (the minimum is 20 letters)" ,class: "commentarea" %>
+            <%= f.submit "Comment",class: "bluebutton" %>
             <% end %>
         </div>
         <% @comments.each do |cm| %>
