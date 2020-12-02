@@ -1,0 +1,9 @@
+.order_row {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    padding: 0;
+    li {
+        list-style: none;
+        font-size: 24px;
+    }
+}
