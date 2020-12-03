@@ -1,8 +1,10 @@
 <div class="productpage-grid">
     <div class="left-produt">
         <%= image(@product) %>
-        <span class="pro_price"> <%= promotion(@product) %></span>
-
+        <div class="buttom-card">
+            <span class="pro_price"> <%= promotion(@product) %></span>
+            <%= addorgotobasket(@product)%>
+        </div>
         <div>
             <i class="fas fa-star <%= colored(1, @product.avg)%> "></i>
             <i class="fas fa-star <%= colored(2, @product.avg)%> "></i>
@@ -20,11 +22,6 @@
 
     <div class="statics">
         <h1>Product rating</h1>
-
-
-
-
-
         <div><span class="starnumber"> one star :</span>
             <p class="nonestar">
                 <span style="width:<%= getperc(@product.ratingsstatic[:one],@product.ratingsstatic[:total]) %>%;" class="colorstar">
@@ -85,3 +82,8 @@
         <% end %>
     </div>
 </div>
+
+<div id="renderForm" class="addcardform"></div>
+
+
+<%= javascript_pack_tag 'addtocard' %>
