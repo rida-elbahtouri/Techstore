@@ -30,10 +30,14 @@ $blue : #4E89FF;
         text-decoration: none;
     }
     p {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 2px;
     }
-
+    .stars_rating {
+        margin-top: 10px;
+    }
     a:hover {
         color: $red;
     }

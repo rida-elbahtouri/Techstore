@@ -4,12 +4,11 @@
         <span class="pro_price"> <%= promotion(@product) %></span>
 
         <div>
-            <input id="product-stars" type="hidden" value=<%= @product.avg %> />
-            <i class="fas fa-star star1 star2 star3 star4 star5"></i>
-            <i class="fas fa-star star2 star3 star4 star5"></i>
-            <i class="fas fa-star star3 star4 star5"></i>
-            <i class="fas fa-star star4 star5"></i>
-            <i class="fas fa-star star5"></i>
+            <i class="fas fa-star <%= colored(1, @product.avg)%> "></i>
+            <i class="fas fa-star <%= colored(2, @product.avg)%> "></i>
+            <i class="fas fa-star <%= colored(3, @product.avg)%> "></i>
+            <i class="fas fa-star <%= colored(4, @product.avg)%> "></i>
+            <i class="fas fa-star <%= colored(5, @product.avg)%> "></i>
         </div>
     </div>
     <div class="right-product">
@@ -86,4 +85,3 @@
         <% end %>
     </div>
 </div>
-<%= javascript_pack_tag 'productpage' %>

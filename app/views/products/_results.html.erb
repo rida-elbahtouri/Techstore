@@ -1,15 +1,22 @@
 <div class="products-result">
-<% @products.each do |product| %>
-<div class='product_result_card'>
+    <% @products.each do |product| %>
+    <div class='product_result_card'>
         <%= image(product) %>
-        <div class ="product-info_result">
-                <%= link_to product.name , product_path(product.id) %>
-                <p><%= product.description[0..300] %></p>
-                
-                <div class="buttom-card">
-                    <span><%= promotion(product) %></span>
-                </div>
+        <div class="product-info_result">
+            <%= link_to product.name , product_path(product.id) %>
+            <div class="stars_rating">
+                <i class="fas fa-star <%= colored(1, product.avg)%> "></i>
+                <i class="fas fa-star <%= colored(2, product.avg)%> "></i>
+                <i class="fas fa-star <%= colored(3, product.avg)%> "></i>
+                <i class="fas fa-star <%= colored(4, product.avg)%> "></i>
+                <i class="fas fa-star <%= colored(5, product.avg)%> "></i>
+            </div>
+            <p><%= product.description[0..300] %></p>
+
+            <div class="buttom-card">
+                <span><%= promotion(product) %></span>
+            </div>
         </div>
-</div>
-<% end %>
+    </div>
+    <% end %>
 </div>

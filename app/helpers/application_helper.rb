@@ -37,8 +37,16 @@ module ApplicationHelper
     render 'users/seller' if user.service == 'Both'
   end
 
-  def getperc(num,tot)
-    per = (num * 100)/tot
+  def getperc(num, tot)
+    per = if tot != 0
+            (num * 100) / tot
+          else
+            0
+          end
     per
+  end
+
+  def colored(stars, avg)
+    'coloredstar' if stars <= avg
   end
 end
