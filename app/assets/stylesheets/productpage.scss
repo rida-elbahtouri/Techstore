@@ -21,6 +21,44 @@ $blue : #4E89FF;
         }
     }
 }
+
+.rate_btn {
+    border: none;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: $red;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 20px;
+}
+.rate_btn:hover {
+        color: $red;
+        background-color: white;
+    
+}
+.Ratingform {
+        display: block;
+        position:fixed ;
+        left:0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(119, 119, 119,0.8);
+        width: 100%;
+}
+.rateForm {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 50%;
+        height: 150px;
+        background-color: white;
+        padding: 10px;
+}
 .right-product {
     grid-column: 2/4;
 
