@@ -58,6 +58,19 @@ $blue : #4E89FF;
         height: 150px;
         background-color: white;
         padding: 10px;
+        text-align: center;
+}
+.RateForm_title {
+    font-size: 24px;
+    color: $blue;
+}
+.RateForm_helpmsg {
+    color: gray;
+    font-size: 16px;
+}
+.ratingStars {
+    font-size: 24px;
+    margin-right: 10px;
 }
 .right-product {
     grid-column: 2/4;
