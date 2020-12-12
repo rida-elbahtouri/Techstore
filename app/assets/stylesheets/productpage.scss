@@ -39,7 +39,7 @@ $blue : #4E89FF;
     
 }
 .Ratingform {
-        display: block;
+        display: none;
         position:fixed ;
         left:0;
         top: 0;
@@ -71,6 +71,7 @@ $blue : #4E89FF;
 .ratingStars {
     font-size: 24px;
     margin-right: 10px;
+    cursor: pointer;
 }
 .right-product {
     grid-column: 2/4;

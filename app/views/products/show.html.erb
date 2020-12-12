@@ -85,7 +85,21 @@
 </div>
 
 <div id="renderForm" class="addcardform"></div>
-<div id="RatingForm" class="Ratingform"></div>
+<div id="RatingForm" class="Ratingform">
+    <div class="rateForm">
+        <h1 class="RateForm_title">Rate Product</h1>
+        <p class="RateForm_helpmsg">Please give a honest review of the Prduct from 1 To 5</p>
+        <div>
+            <i id="ratestar1" class="fas fa-star ratingStars"></i>
+            <i id="ratestar2" class="fas fa-star ratingStars"></i>
+            <i id="ratestar3" class="fas fa-star ratingStars"></i>
+            <i id="ratestar4" class="fas fa-star ratingStars"></i>
+            <i id="ratestar5" class="fas fa-star ratingStars"></i>
+        </div>
+
+        <%= button_to  "Submit", ratings_path, :params => {product_id: @product.id , stars: "ratingsubmmitvalue" }, :method => :post ,class: "remove_promotion" %>
+    </div>
+</div>
 
 <%= javascript_pack_tag 'addtocard' %>
 <%= javascript_pack_tag 'rateProduct' %>
