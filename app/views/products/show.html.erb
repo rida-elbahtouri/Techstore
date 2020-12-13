@@ -12,8 +12,7 @@
             <i class="fas fa-star <%= colored(4, @product.avg)%> "></i>
             <i class="fas fa-star <%= colored(5, @product.avg)%> "></i>
         </div>
-
-        <button class="rate_btn" id="rate_product"> Rate the Product</button>
+        <%= showRatingbtn(@product) %>
     </div>
     <div class="right-product">
         <span class="pro_name"> <%= @product.name %> </span>
@@ -97,7 +96,7 @@
             <i id="ratestar5" class="fas fa-star ratingStars"></i>
         </div>
 
-        <%= button_to  "Submit", ratings_path, :params => {product_id: @product.id , stars: "ratingsubmmitvalue" }, :method => :post ,class: "remove_promotion" %>
+        <%= newupdaterating(@product) %>
     </div>
 </div>
 
