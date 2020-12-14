@@ -21,48 +21,50 @@
 </div>
 <div class="reviews">
     <div class="statics">
-        <h1>Product rating</h1>
-        <div><span class="starnumber"> one star :</span>
-            <p class="nonestar">
-                <span style="width:<%= getperc(@product.ratingsstatic[:one],@product.ratingsstatic[:total]) %>%;" class="colorstar">
-                    <%= getperc(@product.ratingsstatic[:one],@product.ratingsstatic[:total]) %>%
-                </span>
-            </p>
+        <div>
+            <h1>Product rating</h1>
+            <div><span class="starnumber"> one star :</span>
+                <p class="nonestar">
+                    <span style="width:<%= getperc(@product.ratingsstatic[:one],@product.ratingsstatic[:total]) %>%;" class="colorstar">
+                        <%= getperc(@product.ratingsstatic[:one],@product.ratingsstatic[:total]) %>%
+                    </span>
+                </p>
+            </div>
+            <div><span class="starnumber"> two star :</span>
+                <p class="nonestar">
+                    <span style="width:<%= getperc(@product.ratingsstatic[:two],@product.ratingsstatic[:total]) %>%;" class="colorstar">
+                        <%= getperc(@product.ratingsstatic[:two],@product.ratingsstatic[:total]) %>%
+                    </span>
+                </p>
+            </div>
+            <div><span class="starnumber"> three star :</span>
+                <p class="nonestar">
+                    <span style="width:<%= getperc(@product.ratingsstatic[:three],@product.ratingsstatic[:total]) %>%;" class="colorstar">
+                        <%= getperc(@product.ratingsstatic[:three],@product.ratingsstatic[:total]) %>%
+                    </span>
+                </p>
+            </div>
+            <div><span class="starnumber"> four star :</span>
+                <p class="nonestar">
+                    <span style="width:<%= getperc(@product.ratingsstatic[:four],@product.ratingsstatic[:total]) %>%;" class="colorstar">
+                        <%= getperc(@product.ratingsstatic[:four],@product.ratingsstatic[:total]) %>%
+                    </span>
+                </p>
+            </div>
+            <div><span class="starnumber"> five star :</span>
+                <p class="nonestar">
+                    <span style="width:<%= getperc(@product.ratingsstatic[:five],@product.ratingsstatic[:total]) %>%;" class="colorstar">
+                        <%= getperc(@product.ratingsstatic[:five],@product.ratingsstatic[:total]) %>%
+                    </span>
+                </p>
+            </div>
         </div>
-        <div><span class="starnumber"> two star :</span>
-            <p class="nonestar">
-                <span style="width:<%= getperc(@product.ratingsstatic[:two],@product.ratingsstatic[:total]) %>%;" class="colorstar">
-                    <%= getperc(@product.ratingsstatic[:two],@product.ratingsstatic[:total]) %>%
-                </span>
-            </p>
+        <div class="product_seller_det">
+            <h1>Seller details</h1>
+            <p>Adress: <%= @product.seller.sel_detail.shipping_adress %> </p>
+            <p>Number of Poducts:<%= @product.seller.static[:nproducts] %> </p>
+            <p>Number of selles:<%= @product.seller.static[:selles] %> </p>
         </div>
-        <div><span class="starnumber"> three star :</span>
-            <p class="nonestar">
-                <span style="width:<%= getperc(@product.ratingsstatic[:three],@product.ratingsstatic[:total]) %>%;" class="colorstar">
-                    <%= getperc(@product.ratingsstatic[:three],@product.ratingsstatic[:total]) %>%
-                </span>
-            </p>
-        </div>
-        <div><span class="starnumber"> four star :</span>
-            <p class="nonestar">
-                <span style="width:<%= getperc(@product.ratingsstatic[:four],@product.ratingsstatic[:total]) %>%;" class="colorstar">
-                    <%= getperc(@product.ratingsstatic[:four],@product.ratingsstatic[:total]) %>%
-                </span>
-            </p>
-        </div>
-        <div><span class="starnumber"> five star :</span>
-            <p class="nonestar">
-                <span style="width:<%= getperc(@product.ratingsstatic[:five],@product.ratingsstatic[:total]) %>%;" class="colorstar">
-                    <%= getperc(@product.ratingsstatic[:five],@product.ratingsstatic[:total]) %>%
-                </span>
-            </p>
-        </div>
-
-
-        <h1>Seller details</h1>
-        <p>Adress: <%= @product.seller.sel_detail.shipping_adress %> </p>
-        <p>Number of Poducts:<%= @product.seller.static[:nproducts] %> </p>
-        <p>Number of selles:<%= @product.seller.static[:selles] %> </p>
     </div>
     <div class="comments">
         <h1>Customers review</h1>

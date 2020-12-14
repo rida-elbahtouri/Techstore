@@ -3,6 +3,7 @@ $blue : #4E89FF;
 .container {
     max-width: 1600px;
     margin: 0 auto;
+    padding: 10px;
     padding-bottom:  130px;
 }
 .bluebutton {
@@ -231,6 +232,7 @@ $blue : #4E89FF;
 
 
 @media only screen and (max-width: 1300px) {
+    
     .header-products {
         grid-template-columns: 1fr;
     }
