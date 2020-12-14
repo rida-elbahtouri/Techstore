@@ -95,3 +95,30 @@ width: 50%;
         border: 1px solid $red;
     }
 }
+
+@media only screen and (max-width: 850px) {
+
+    .basket{
+        grid-template-columns: repeat(6,1fr);
+        
+    }
+    .product-basket {
+        grid-column: 1/3;
+    }
+    .basket-titles {
+        grid-template-columns: repeat(6,1fr);
+        .product_title_f{
+            grid-column: 1/3;
+        }
+        .tootal{
+            grid-column: 5/7;
+        }
+        h1 {
+            font-size: 16px;
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+}
