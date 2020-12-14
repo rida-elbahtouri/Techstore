@@ -54,7 +54,7 @@ $blue : #4E89FF;
 }
 .profile_product {
     padding-left: 10px;
-
+    grid-column: 2/-1;
     a {
         text-decoration: none;
     }
@@ -106,4 +106,25 @@ $blue : #4E89FF;
     background-color: white;
     color: $red;
     border: 1px solid $red;
+}
+
+
+
+@media only screen and (max-width: 850px) {
+    .profile {
+        grid-template-columns: 1fr;
+    }
+    .profile_product-card {
+        grid-template-columns: repeat(2,1fr);
+     .img {
+         grid-column: 1/2;
+     }
+     p {
+         margin: 10px 0;
+     }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
 }
