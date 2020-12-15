@@ -30,7 +30,7 @@
                 </div>
             </div>
 
-            <span class='promo'>Promotions</span>
+
         </div>
         <div class='left-side'>
 
@@ -42,13 +42,18 @@
 
 
 
-
-            <a href="/baskets"> <i class="fas fa-shopping-basket"></i> </a>
-            <%= link_to  user_path do %>
-            <i class="fas fa-user"></i>
-            <% end %>
+            <div>
+                <a href="/baskets"> <i class="fas fa-shopping-basket"></i> </a>
+                <%= link_to  user_path do %>
+                <i class="fas fa-user"></i>
+                <% end %>
+            </div>
         </div>
-
+        <div id="humberger" class="humberger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
     </nav>
     <p class="notice"><%= notice %></p>

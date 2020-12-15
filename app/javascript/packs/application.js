@@ -17,13 +17,18 @@ import "@fortawesome/fontawesome-free/js/all";
 // const imagePath = (name) => images(name, true)
 
 window.onload = function(){
+
 const categorybtn = document.getElementById('category-nav');
 const categorylist = document.getElementById('category-list');
+if (window.innerWidth > 850){
 document.onclick = (e)=>{
     if(e.target === categorybtn){
         categorylist.style.display = 'block';
     }else {
         categorylist.style.display = 'none';
     }
+ }   
 };
+
+
 };

@@ -93,7 +93,16 @@
  .nav-cat:hover {
    color: gray;
  }
-  
+  .humberger {
+    display: none;
+    span {
+      display: block;
+      background-color: black;
+      height: 4px;
+      width: 30px;
+      margin-bottom: 5px;
+    }
+  }
   .category-content {
     display: none;
     position: absolute;
@@ -127,20 +136,47 @@
 
 
   @media only screen and (max-width: 850px) {
-    .product_result_card {
-        grid-template-columns: repeat(4,1fr);
-         .img {
-             grid-column: 1/3;
-         }
+    .humberger {
+      display: block;
+      position: absolute;
+      right: 25px;
+      top: 5px;
     }
     
-    .product-info_result {
-        grid-column: 3/-1;
-        padding-left: 10px;
-        p {
-            font-size: 16px;
-            font-weight: normal;
-        }
-       
+    .nav {
+      position: fixed;
+      top: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: #f7f5fa;
+      z-index: 9999;  
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      .prlogo {
+        font-size: 24px;
+      }
+    }
+    .left-side ,.right-nav {
+      flex-direction: column;
+
+    }
+    .category {
+      margin-left: 0;
+    }
+    .nav-cat {
+      color: gray;
+      font-size: 20px;
+    }
+    .category-content {
+    display: block !important;
+    position: relative;
+    background-color: inherit;
+    min-width: auto;
+    
+    a{
+      text-align: center;
+    }
+    
     }
 }
