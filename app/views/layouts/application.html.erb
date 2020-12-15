@@ -20,8 +20,8 @@
             <%= link_to  "TechStore", root_path ,class:"prlogo" %>
 
             <div class="category">
-                <span class="nav-cat">Category</span>
-                <div class="category-content">
+                <span id="category-nav" class="nav-cat">Category</span>
+                <div id="category-list" class="category-content">
                     <a href="/category/computer">Computers</a>
                     <a href="/category/general">General</a>
                     <a href="/category/monitors">Monitors</a>
@@ -48,6 +48,8 @@
             <i class="fas fa-user"></i>
             <% end %>
         </div>
+
+
     </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
