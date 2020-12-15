@@ -232,7 +232,12 @@ $blue : #4E89FF;
 
 
 @media only screen and (max-width: 1300px) {
-    
+    .footer {
+        height: 150px;
+    }
+    .container {
+        padding-bottom:  160px;
+    }
     .header-products {
         grid-template-columns: 1fr;
     }
@@ -258,6 +263,16 @@ $blue : #4E89FF;
     
     .products {
     grid-template-columns: repeat(2,1fr);
+    }
+    .footer {
+        height: 250px;
+        flex-direction: column;
+        div {
+            width: 100%;
+        }
+    }
+    .container {
+        padding-bottom:  260px;
     }
 }
 
