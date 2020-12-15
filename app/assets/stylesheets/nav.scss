@@ -136,14 +136,29 @@
 
 
   @media only screen and (max-width: 850px) {
+    .container {
+    margin-top: 50px;
+    }
+    .nav-container {
+      position: fixed;
+      top: 0;
+      height: 50px;
+      border-bottom: 1px solid black;
+      width: 100vw;
+      background-color: white;
+      z-index: 5;
+    }
     .humberger {
       display: block;
       position: absolute;
       right: 25px;
-      top: 5px;
+      top: 15px;
+      cursor: pointer;
+      z-index: 999999;
     }
     
     .nav {
+      display: none;
       position: fixed;
       top: 0;
       height: 100vh;
@@ -153,6 +168,8 @@
       justify-content: center;
       flex-direction: column;
       text-align: center;
+      animation-name: MoveToBottom;
+      animation-duration: 1s;
       .prlogo {
         font-size: 24px;
       }
@@ -179,4 +196,15 @@
     }
     
     }
+}
+
+@keyframes MoveToBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

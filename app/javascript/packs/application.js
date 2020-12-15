@@ -20,6 +20,9 @@ window.onload = function(){
 
 const categorybtn = document.getElementById('category-nav');
 const categorylist = document.getElementById('category-list');
+const humberger = document.getElementById("humberger")
+const nav = document.getElementById("navbar-content")
+
 if (window.innerWidth > 850){
 document.onclick = (e)=>{
     if(e.target === categorybtn){
@@ -29,6 +32,15 @@ document.onclick = (e)=>{
     }
  }   
 };
+
+humberger.addEventListener("click",()=>{
+    console.log("event work")
+    if (nav.style.display === "flex"){
+        nav.style.display = 'none';
+    }else {
+        nav.style.display = 'flex';
+    }
+})
 
 
 };

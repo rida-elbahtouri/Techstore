@@ -14,48 +14,48 @@
 </head>
 
 <body>
+    <div class="nav-container">
+        <nav id="navbar-content" class='nav'>
+            <div class='right-nav'>
+                <%= link_to  "TechStore", root_path ,class:"prlogo" %>
 
-    <nav class='nav'>
-        <div class='right-nav'>
-            <%= link_to  "TechStore", root_path ,class:"prlogo" %>
+                <div class="category">
+                    <span id="category-nav" class="nav-cat">Category</span>
+                    <div id="category-list" class="category-content">
+                        <a href="/category/computer">Computers</a>
+                        <a href="/category/general">General</a>
+                        <a href="/category/monitors">Monitors</a>
+                        <a href="/category/components">Components</a>
+                        <a href="/category/others">Others</a>
+                    </div>
+                </div>
 
-            <div class="category">
-                <span id="category-nav" class="nav-cat">Category</span>
-                <div id="category-list" class="category-content">
-                    <a href="/category/computer">Computers</a>
-                    <a href="/category/general">General</a>
-                    <a href="/category/monitors">Monitors</a>
-                    <a href="/category/components">Components</a>
-                    <a href="/category/others">Others</a>
+
+            </div>
+            <div class='left-side'>
+
+                <%= form_tag('/search',method: :get ,:class => 'search') do %>
+                <%= text_field_tag(:term,nil, placeholder: 'search term ...') %>
+                <%= submit_tag("Search" ,class:"mysearch") %>
+                <% end %>
+
+
+
+
+                <div>
+                    <a href="/baskets"> <i class="fas fa-shopping-basket"></i> </a>
+                    <%= link_to  user_path do %>
+                    <i class="fas fa-user"></i>
+                    <% end %>
                 </div>
             </div>
-
-
-        </div>
-        <div class='left-side'>
-
-            <%= form_tag('/search',method: :get ,:class => 'search') do %>
-            <%= text_field_tag(:term,nil, placeholder: 'search term ...') %>
-            <%= submit_tag("Search" ,class:"mysearch") %>
-            <% end %>
-
-
-
-
-            <div>
-                <a href="/baskets"> <i class="fas fa-shopping-basket"></i> </a>
-                <%= link_to  user_path do %>
-                <i class="fas fa-user"></i>
-                <% end %>
-            </div>
-        </div>
+        </nav>
         <div id="humberger" class="humberger">
             <span></span>
             <span></span>
             <span></span>
         </div>
-
-    </nav>
+    </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <div class="wraper">
