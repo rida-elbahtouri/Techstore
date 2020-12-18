@@ -1,0 +1,44 @@
+$red : #F13864;
+$blue : #4E89FF;
+
+.form {
+    border: 1px solid rgb(209, 209, 209);
+    padding: 25px 5px;
+    border-radius: 5px;
+    .form-content {
+        width: 90%;
+        margin: 0 auto;
+    }
+    label {
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+    }
+    input {
+        width: 100%;
+        margin: 10px 0;
+        height: 40px;
+        box-sizing: border-box;
+    }
+}
+.bluetitle {
+    color: $blue;
+    font-size: 24px;
+}
+.flex-two {
+    display: flex;
+
+    div {
+        width: 50%;
+        margin-right: 5px;
+    }
+}
+
+.selecttype{
+    margin: 10px 0;
+    height: 40px;
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 18px;
+        
+}
