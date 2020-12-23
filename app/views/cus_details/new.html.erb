@@ -1,5 +1,5 @@
-<%= form_for @cus_details do |f| %>
-    <%= f.label "Your Adress"%>
-    <%= f.text_field :adress %>
-    <%= f.submit "Create account"%>
-<%end%>
+<%= form_tag( cus_details_path , method: "post") do |f| %>
+<%= label_tag(:adress, "Your Adress:") %>
+<%= text_field_tag(:adress) %><br>
+<%= submit_tag("Create account") %>
+<% end %>

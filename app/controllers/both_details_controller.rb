@@ -10,7 +10,7 @@ class BothDetailsController < ApplicationController
       seldet = current_user.create_sel_detail(shipping_adress: params[:shipping_adress], product_type: params[:sel_detail]['product_type'])
     end
 
-    cusdet = if current_user.sel_detail
+    cusdet = if current_user.cus_detail
                current_user.cus_detail.update(adress: params[:adress])
              else
                current_user.create_cus_detail(adress: params[:adress])

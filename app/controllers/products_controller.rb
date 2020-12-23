@@ -74,6 +74,6 @@ class ProductsController < ApplicationController
   end
 
   def userIsSeller!
-    redirect_to edit_user_registration_path(current_user.id) unless current_user.service == 'Both'
+    redirect_to edit_user_registration_path(current_user.id) if !current_user.sel_detail && !current_user.cus_detail
   end
 end

@@ -1,4 +1,23 @@
 module ApplicationHelper
+  def accountcomplete(user)
+    link = user.service
+    if link == 'Both'
+      link_to 'Here', new_both_detail_path
+    elsif link == 'customer'
+      link_to 'Here', new_cus_detail_path
+    end
+  end
+
+  def checkaccount(user)
+    if user
+      link = user.service
+
+      if (link == 'Both' && !user.sel_detail && !current_page?('/both_details/new')) || (link == 'customer' && !user.cus_detail && !current_page?('/cus_details/new'))
+        render 'layouts/checkaccount'
+      end
+    end
+  end
+
   def image(product)
     if product.photo
       image_tag(product.photo, class: 'img')
