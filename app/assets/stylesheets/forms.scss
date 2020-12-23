@@ -40,5 +40,14 @@ $blue : #4E89FF;
         box-sizing: border-box;
         width: 100%;
         font-size: 18px;
-        
+
+}
+@media only screen and (max-width: 850px) {
+    .flex-two {
+        flex-direction: column;
+        div {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
 }

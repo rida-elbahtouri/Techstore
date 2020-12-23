@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
+  before_action :userIsSeller!, only: %i[edit update new create destory]
   def index
     @mostselles = Product.all.mosts.first
     @hotselles = Product.all.mosts
@@ -70,5 +71,9 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name, :description, :price, :categ, :photo, :promotion)
+  end
+
+  def userIsSeller!
+    redirect_to edit_user_registration_path(current_user.id) unless current_user.service == 'Both'
   end
 end
