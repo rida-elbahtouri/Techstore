@@ -41,8 +41,8 @@ const CreateAdToCardForm = (data,id,basketID) =>{
 }
 editCard.forEach(btn=>{
     btn.addEventListener('click',(e)=>{ 
-        const basketID= e.target.value.split("/")[0]
-        const ProductId= e.target.value.split("/")[1]
+        const basketID= btn.value.split("/")[0]
+        const ProductId= btn.value.split("/")[1]
         renderForm.style.display="block"
          fetch(`/productscard/${ProductId}`)
          .then((data) => data.json())

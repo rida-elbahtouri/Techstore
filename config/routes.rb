@@ -3,13 +3,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'products#index'
   resources :products
-  resources :comments
-  resources :cus_details
-  resources :sel_details
-  resources :both_details
+  resources :comments, only: [:create]
+  resources :cus_details, only: %i[new create]
+  resources :both_details, only: %i[new create]
   resources :baskets
-  resources :orders
-  resources :ratings
+  resources :orders, only: %i[update index create]
+  resources :ratings, only: %i[update create]
 
   get '/category/:cat', to: 'products#category'
   get '/search', to: 'products#search', as: :search

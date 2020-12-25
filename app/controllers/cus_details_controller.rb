@@ -19,29 +19,6 @@ class CusDetailsController < ApplicationController
     end
   end
 
-  def edit
-    @cus_details = CusDetail.find(params[:id])
-  end
-
-  def update
-    if @cus_details = current_user.update_cus_detail(cus)
-      flash[:notice] = 'your information has been updated succesfully'
-      redirect_to products_path
-    else
-      flash[:alert] = "we couldn't update your information"
-      render edit
-    end
-  end
-
-  def destroy
-    if @cus_details = current_user.cus_detail.destroy
-      redirect_to products_path
-    else
-      flash[:alert] = "we couldn't update your information"
-      render show
-    end
-  end
-
   private
 
   def cus
