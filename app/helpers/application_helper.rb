@@ -1,4 +1,5 @@
 module ApplicationHelper
+  # this method check where to take user based on the service he chosed
   def accountcomplete(user)
     link = user.service
     if link == 'Both'
@@ -8,11 +9,14 @@ module ApplicationHelper
     end
   end
 
+  # this function check if user didn't complete his profile
+  # and show a red warning on the top of the page
+  # exept in the edit user page and adding details page
   def checkaccount(user)
     if user
       link = user.service
-
-      if (link == 'Both' && !user.sel_detail && !current_page?('/both_details/new')) || (link == 'customer' && !user.cus_detail && !current_page?('/cus_details/new'))
+      if (link == 'Both' && !user.sel_detail && !current_page?('/both_details/new') && !current_page?("/users/edit.#{user.id}")) ||
+         (link == 'customer' && !user.cus_detail && !current_page?('/cus_details/new') && !current_page?("/users/edit.#{user.id}"))
         render 'layouts/checkaccount'
       end
     end
