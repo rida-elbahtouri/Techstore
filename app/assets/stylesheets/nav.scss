@@ -1,4 +1,5 @@
-
+$red : #F13864;
+$blue : #4E89FF;
  .nav{
     overflow: hidden;
     background-color: white;
@@ -7,7 +8,17 @@
     align-items: center;
     border-bottom: 1px solid gray;
     padding: 0 5px;
-
+   .addproduct {
+    font-size: 14px;
+    font-weight: bold;
+    color:$red;
+  }
+  .addproduct:hover {
+    color:gray;
+  }
+  .signout:hover {
+    color: $red;
+  }
   }
   .nav a {
     float: left;
@@ -17,7 +28,7 @@
     padding: 15px;
     text-decoration: none;
   }
-  
+ 
   .left-side ,.right-nav {
     display: flex;
     flex-wrap: nowrap;
@@ -31,9 +42,10 @@
       cursor: pointer;
     }
   }
+
 .left-side {
   *{
-    margin-right: 10px;
+    margin-right: 0px;
   }
   input {
     height: 30px;

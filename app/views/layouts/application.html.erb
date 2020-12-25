@@ -30,7 +30,11 @@
                     </div>
                 </div>
 
-
+                <% if user_signed_in? %>
+                <% if current_user.service == "Both"%>
+                <%= link_to  "Add Product", new_product_path ,class:"addproduct" %>
+                <% end %>
+                <% end %>
             </div>
             <div class='left-side'>
 
@@ -46,6 +50,11 @@
                     <a href="/baskets"> <i class="fas fa-shopping-basket"></i> </a>
                     <%= link_to  user_path do %>
                     <i class="fas fa-user"></i>
+                    <% end %>
+                    <% if user_signed_in? %>
+                    <%= link_to  destroy_user_session_path,method: :delete do %>
+                    <i class="fas fa-sign-out-alt signout"></i>
+                    <% end %>
                     <% end %>
                 </div>
             </div>
