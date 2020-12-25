@@ -21,7 +21,7 @@ class BothDetailsController < ApplicationController
       redirect_to products_path
     else
       flash[:alert] = "we couldn't add your information"
-      render new
+      render :new
     end
   end
 end

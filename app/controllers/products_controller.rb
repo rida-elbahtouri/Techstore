@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
     @product = current_user.goods.new(product_params)
     if @product.save
       flash[:notice] = 'your product has been created succesfully'
-      redirect_to products_path
+      redirect_to product_path(@product.id)
     else
       flash[:alert] = "we couldn't create the product"
       render :new
@@ -36,7 +36,7 @@ class ProductsController < ApplicationController
     @product = current_user.goods.find(params[:id])
     if @product.update(product_params)
       flash[:notice] = 'your product has been updated succesfully'
-      redirect_to products_path
+      redirect_to product_path(@product.id)
     else
       flash[:alert] = "we couldn't update the product"
       render :edit
@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
     @product = current_user.goods.find(params[:id])
     if @product.destroy
       flash[:notice] = 'your product has been removed succesfully'
-      redirect_to products_path
+      redirect_to user_path
     else
       flash[:alert] = "we couldn't remove the product"
       render :index
