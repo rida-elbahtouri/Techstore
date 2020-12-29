@@ -4,6 +4,10 @@ class OrdersController < ApplicationController
     @orders = current_user.orders.where(delivered: false)
   end
 
+  def history
+    @orders = current_user.orders.where(delivered: true)
+  end
+
   def create
     user = User.find(current_user.id)
     user.baskets.each do |basket|

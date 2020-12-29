@@ -1,23 +1,4 @@
 <h1 class="myorder">My orders</h1>
+<%= link_to  "Check your history", history_path ,class:"authlink" %>
 
-<ul class="order_row">
-    <li>Product</li>
-    <li>Price</li>
-    <li>Quantity</li>
-    <li>Total</li>
-    <li>Customer Adress</li>
-</ul>
-<% @orders.each do |order| %>
-<div class="order">
-    <div class="product-basket">
-        <%= image(order.product) %>
-        <p> <%= link_to order.product.name , product_path(order.product.id) %></p>
-    </div>
-    <p> <%=  order.product.price - (order.product.price * order.product.promotion)/100 %> </p>
-    <p id=<%= order.id %>> <%= order.quantity %></p>
-    <p id="totalfor<%= order.id %>"> <%= order.quantity*(order.product.price - (order.product.price * order.product.promotion)/100 )  %> </p>
-    <%= order.adress %>
-
-    <%= button_to  "delevired", order_path(order.id)  ,:params => {id: order.id } ,:method => :patch,class: "bluebutton" %>
-</div>
-<%end%>
+<%= Displayorder(@orders) %>

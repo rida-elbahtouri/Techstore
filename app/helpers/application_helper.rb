@@ -94,4 +94,9 @@ module ApplicationHelper
       button_to  'Submit', ratings_path, params: { product_id: product.id, stars: 'ratingsubmmitvalue' }, method: :post, class: 'remove_promotion'
     end
   end
+
+  def Displayorder(orders)
+    @orders = orders
+    render 'orders/orders'
+  end
 end
