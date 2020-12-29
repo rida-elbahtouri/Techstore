@@ -1,5 +1,6 @@
 <div class="profile_products">
     <h2>My products</h2>
+    <%= link_to  "My Orders", orders_path ,class:"authlink" %>
     <% current_user.goods.each do |product| %>
     <div class='profile_product-card'>
         <%= image(product) %>
@@ -24,4 +25,4 @@
     </div>
     <% end %>
 
-</div> 
+</div>
