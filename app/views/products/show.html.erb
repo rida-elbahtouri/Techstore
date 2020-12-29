@@ -1,54 +1,106 @@
 <div class="productpage-grid">
     <div class="left-produt">
-    <%= image(@product) %>
-    <span class="pro_price"> <%= promotion(@product) %></span>
-    
-    <div  >
-    <input id="product-stars"  type="hidden" value=<%= @product.avg %> />
-    <i class="fas fa-star star1 star2 star3 star4 star5"></i>
-    <i class="fas fa-star star2 star3 star4 star5"></i>
-    <i class="fas fa-star star3 star4 star5"></i>
-    <i class="fas fa-star star4 star5"></i>
-    <i class="fas fa-star star5"></i>
-    </div>
+        <%= image(@product) %>
+        <div class="buttom-card">
+            <span class="pro_price"> <%= promotion(@product) %></span>
+            <%= addorgotobasket(@product)%>
+        </div>
+        <div>
+            <i class="fas fa-star <%= colored(1, @product.avg)%> "></i>
+            <i class="fas fa-star <%= colored(2, @product.avg)%> "></i>
+            <i class="fas fa-star <%= colored(3, @product.avg)%> "></i>
+            <i class="fas fa-star <%= colored(4, @product.avg)%> "></i>
+            <i class="fas fa-star <%= colored(5, @product.avg)%> "></i>
+        </div>
+        <%= showRatingbtn(@product) %>
     </div>
     <div class="right-product">
-    <span class="pro_name">  <%= @product.name %> </span>
-    <p class="pro_descr"> <%= @product.description %></p>
+        <span class="pro_name"> <%= @product.name %> </span>
+        <p class="pro_descr"> <%= @product.description %></p>
     </div>
 </div>
 <div class="reviews">
+    <div class="statics">
+        <div>
+            <h1>Product rating</h1>
+            <div><span class="starnumber"> one star :</span>
+                <p class="nonestar">
+                    <span style="width:<%= getperc(@product.ratingsstatic[:one],@product.ratingsstatic[:total]) %>%;" class="colorstar">
+                        <%= getperc(@product.ratingsstatic[:one],@product.ratingsstatic[:total]) %>%
+                    </span>
+                </p>
+            </div>
+            <div><span class="starnumber"> two star :</span>
+                <p class="nonestar">
+                    <span style="width:<%= getperc(@product.ratingsstatic[:two],@product.ratingsstatic[:total]) %>%;" class="colorstar">
+                        <%= getperc(@product.ratingsstatic[:two],@product.ratingsstatic[:total]) %>%
+                    </span>
+                </p>
+            </div>
+            <div><span class="starnumber"> three star :</span>
+                <p class="nonestar">
+                    <span style="width:<%= getperc(@product.ratingsstatic[:three],@product.ratingsstatic[:total]) %>%;" class="colorstar">
+                        <%= getperc(@product.ratingsstatic[:three],@product.ratingsstatic[:total]) %>%
+                    </span>
+                </p>
+            </div>
+            <div><span class="starnumber"> four star :</span>
+                <p class="nonestar">
+                    <span style="width:<%= getperc(@product.ratingsstatic[:four],@product.ratingsstatic[:total]) %>%;" class="colorstar">
+                        <%= getperc(@product.ratingsstatic[:four],@product.ratingsstatic[:total]) %>%
+                    </span>
+                </p>
+            </div>
+            <div><span class="starnumber"> five star :</span>
+                <p class="nonestar">
+                    <span style="width:<%= getperc(@product.ratingsstatic[:five],@product.ratingsstatic[:total]) %>%;" class="colorstar">
+                        <%= getperc(@product.ratingsstatic[:five],@product.ratingsstatic[:total]) %>%
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="product_seller_det">
+            <h1>Seller details</h1>
+            <p>Adress: <%= @product.seller.sel_detail.shipping_adress %> </p>
+            <p>Number of Poducts:<%= @product.seller.static[:nproducts] %> </p>
+            <p>Number of selles:<%= @product.seller.static[:selles] %> </p>
+        </div>
+    </div>
+    <div class="comments">
+        <h1>Customers review</h1>
 
-<div class="statics">
-    <h1>Product rating</h1>
-    <p>one star : <%= @product.ratingsstatic[:one]  %> </p>
-    <p>two star : <%= @product.ratingsstatic[:two]  %> </p>
-    <p>three star : <%= @product.ratingsstatic[:three]  %> </p>
-    <p>four star : <%= @product.ratingsstatic[:four]  %> </p>
-    <p>five star : <%= @product.ratingsstatic[:five]  %> </p>
-
-
-    <h1>Seller details</h1>
-    <p>Adress: <%= @product.seller.sel_detail.shipping_adress %>  </p>
-    <p>Number of Poducts:<%= @product.seller.static[:nproducts] %> </p>
-    <p>Number of selles:<%= @product.seller.static[:selles] %> </p>
-</div>
-<div class="comments">
-<h1>Customers review</h1>
-
-    <div class="comment-cont">
-        <%= form_for(@product.comments.new, url: comments_path(@product))  do |f| %>
+        <div class="comment-cont">
+            <%= form_for(@product.comments.new, url: comments_path(@product))  do |f| %>
             <p class="commenter"> <%= current_user.name %> </p>
-            <%= f.text_area(:content, size: '50x10') %>
-            <%= f.submit "Submit" %>
+            <%= f.text_area :content,placeholder: "write your comment (the minimum is 20 letters)" ,class: "commentarea" %>
+            <%= f.submit "Comment",class: "bluebutton" %>
+            <% end %>
+        </div>
+        <% @comments.each do |cm| %>
+        <div class="comment-cont">
+            <p class="commenter"><%= cm.customer.name %></p>
+            <p class="comment"> <%= cm.content %></p>
+        </div>
         <% end %>
     </div>
-    <% @comments.each do |cm| %>
-    <div class="comment-cont">
-        <p class="commenter"><%= cm.customer.name %></p>
-       <p class="comment"> <%= cm.content %></p>
+</div>
+
+<div id="renderForm" class="addcardform"></div>
+<div id="RatingForm" class="Ratingform">
+    <div class="rateForm">
+        <h1 class="RateForm_title">Rate Product</h1>
+        <p class="RateForm_helpmsg">Please give a honest review of the Prduct from 1 To 5</p>
+        <div>
+            <i id="ratestar1" class="fas fa-star ratingStars"></i>
+            <i id="ratestar2" class="fas fa-star ratingStars"></i>
+            <i id="ratestar3" class="fas fa-star ratingStars"></i>
+            <i id="ratestar4" class="fas fa-star ratingStars"></i>
+            <i id="ratestar5" class="fas fa-star ratingStars"></i>
+        </div>
+
+        <%= newupdaterating(@product) %>
     </div>
-    <% end %>
 </div>
-</div>
-<%= javascript_pack_tag 'productpage' %>
+
+<%= javascript_pack_tag 'addtocard' %>
+<%= javascript_pack_tag 'rateProduct' %>

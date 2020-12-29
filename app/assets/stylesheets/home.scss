@@ -3,9 +3,21 @@ $blue : #4E89FF;
 .container {
     max-width: 1600px;
     margin: 0 auto;
+    padding: 10px;
     padding-bottom:  130px;
 }
+.rederror {
+    padding: 5px;
+    margin: 0;
+    background-color: red;
+    color: brown;
+}
 
+
+.bluebutton:hover {
+    background-color: white;
+    color:  $blue;
+}
 .header-products {
     display: grid;
     grid-template-columns: repeat(5,1fr);
@@ -212,5 +224,60 @@ $blue : #4E89FF;
         text-decoration: none;
         color: white;
         margin-right: 15px;
+    }
+}
+
+
+@media only screen and (max-width: 1300px) {
+    .footer {
+        height: 150px;
+    }
+    .container {
+        padding-bottom:  160px;
+    }
+    .header-products {
+        grid-template-columns: 1fr;
+    }
+    .mostselled {
+        background-color: rgb(20, 19, 19);
+        grid-column: 1/2;
+    }
+    .hurryup-section {
+        grid-template-columns: 1fr 1fr;
+        grid-column: 1/2;
+        margin: 0 10px;
+        h1 {
+            grid-column: 1/-1; 
+        }
+    }
+    .products {
+    grid-template-columns: repeat(3,1fr);
+    margin: 0 10px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    
+    .products {
+    grid-template-columns: repeat(2,1fr);
+    }
+    .footer {
+        height: 250px;
+        flex-direction: column;
+        div {
+            width: 100%;
+        }
+    }
+    .container {
+        padding-bottom:  260px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .hurryup-section {
+        grid-template-columns: 1fr;
+    }
+    .products {
+    grid-template-columns: 1fr;
     }
 }

@@ -1,18 +1,27 @@
  <% @product.errors.full_messages.each do |msg| %>
-        <p> <%= msg%> </p>
-    <% end %>
-<%= form_for @product do |f| %>
-
-   
+ <p> <%= msg%> </p>
+ <% end %>
+ <h1 class="bluetitle">Add a New Product</h1>
+ <%= form_for @product,:html => {:class => 'form',} do |f| %>
+ <div class="form-content">
      <%= f.label "Product Image Url"%><br />
-    <%= f.text_field :photo %><br />
-    <%= f.label "Product Name"%><br />
-    <%= f.text_field :name %><br />
-    <%= f.label "Description"%><br />
-    <%= f.text_field :description %><br />
-    <%= f.label "Price"%><br />
-    <%= f.number_field :price %> <span>$</span><br />
-    <%= f.label "Product category" %><br />
-    <%= select(:product ,:categ, [['general', 'general'], ['computer', 'computer'], ['monitors', 'monitors'], ['components', 'components'], ['others', 'others']]) %><br />
-    <%= f.submit "Create Product" %>
-<% end %>
+     <%= f.text_field :photo %><br />
+     <div class="flex-two">
+         <div>
+             <%= f.label "Product Name"%><br />
+             <%= f.text_field :name %><br />
+         </div>
+         <div>
+             <%= f.label "Product category" %><br />
+             <%= select(:product ,:categ, [['general', 'general'], ['computer', 'computer'], ['monitors', 'monitors'], ['components', 'components'], ['others', 'others']] , {},{:class => 'selecttype'})  %><br />
+         </div>
+     </div>
+     <%= f.label "Description"%><br />
+     <%= f.text_area :description   ,class: "commentarea" %><br />
+     <%= f.label "Price"%><br />
+     <%= f.number_field :price,placeholder:"Price in USD" %>
+     <%= f.label "Promotion"  %><br />
+     <%= f.number_field :promotion %>
+     <%= f.submit "Create Product" ,class:"bluebutton" %>
+ </div>
+ <% end %>

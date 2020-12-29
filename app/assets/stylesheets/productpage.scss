@@ -1,5 +1,6 @@
 $red : #F13864;
 $blue : #4E89FF;
+
 .productpage-grid {
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -20,6 +21,58 @@ $blue : #4E89FF;
         }
     }
 }
+
+.rate_btn {
+    border: none;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: $red;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 20px;
+}
+.rate_btn:hover {
+        color: $red;
+        background-color: white;
+    
+}
+.Ratingform {
+        display: none;
+        position:fixed ;
+        left:0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(119, 119, 119,0.8);
+        width: 100%;
+}
+.rateForm {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 50%;
+        height: 150px;
+        background-color: white;
+        padding: 10px;
+        text-align: center;
+}
+.RateForm_title {
+    font-size: 24px;
+    color: $blue;
+}
+.RateForm_helpmsg {
+    color: gray;
+    font-size: 16px;
+}
+.ratingStars {
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
 .right-product {
     grid-column: 2/4;
 
@@ -34,6 +87,31 @@ $blue : #4E89FF;
         font-size: 18px;
     }
 }
+.coloredstar {
+    color: rgb(255, 187, 0);
+}
+.nonestar {
+    display: inline-block;
+    border: 1px solid gray;
+    height: 15px;
+    width: 150px;
+    background-color: rgb(218, 218, 218);
+    padding: 0;
+    margin: 0;
+}
+.starnumber{
+    display: inline-block;
+    width: 100px;
+}
+.colorstar {
+    height: 15px;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    background-color: orange;
+    color: gray;
+    
+}
 
 .reviews {
     display: grid;
@@ -42,6 +120,8 @@ $blue : #4E89FF;
     margin-top: 15px;
 }
 .statics {
+    display: grid;
+    grid-template-columns: 1fr;
     h1 {
         font-size: 24px;
         color: $blue;
@@ -56,6 +136,15 @@ $blue : #4E89FF;
         color: $blue;
     }
 }
+.commentarea {
+    resize: none;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
 .comment-cont {
     border: 1px solid gray;
     border-top: none;
@@ -74,4 +163,56 @@ $blue : #4E89FF;
     margin: 0;
     margin-top: 3px;
     font-size: 16px;
+}
+
+@media only screen and (max-width: 1300px) {
+    .productpage-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .right-product {
+        grid-column: 2/-1;
+        .pro_descr {
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .productpage-grid {
+        grid-template-columns: 1fr;
+    }
+    .right-product {
+        grid-column: 1/-1;
+        .pro_descr {
+            width: 90%;
+        }
+    }
+    .statics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .product_seller_det {
+            border-left: 1px solid gainsboro;
+    padding-left: 10px;
+        }
+    }
+    .reviews {
+        grid-template-columns: 1fr;
+    }
+    .comments{
+        grid-column: 1/-1;
+        border-left: none;
+        padding-left: 0;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+.statics {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .product_seller_det {
+        border-left:none;
+padding-left: 0;
+    }
+}
 }

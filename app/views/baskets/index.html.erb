@@ -1,39 +1,34 @@
-
-
-
-
-
 <div class="basket-titles">
-<h1>Product</h1>
-<h1>Price</h1>
-<h1>Quantity</h1>
-<h1 class="tootal">Total</h1>
+    <h1 class="product_title_f">Product</h1>
+    <h1>Price</h1>
+    <h1>Quantity</h1>
+    <h1 class="tootal">Total</h1>
 </div>
 
 
 
 <% @baskets.each do |basket| %>
 <div class="basket">
-<div class="product-basket">
-<%= image(basket.product) %>
-<p> <%= link_to basket.product.name , product_path(basket.product.id) %></p>
-</div>
-<p> <%=  basket.product.price - (basket.product.price * basket.product.promotion)/100 %> </p>
-<p id=<%= basket.id %> >  <%= basket.quantity %></p>
-<p id="totalfor<%= basket.id %>" > <%= basket.quantity*(basket.product.price - (basket.product.price * basket.product.promotion)/100 )  %> </p>
-<div class="basket-buttons">
-<%= button_to  basket_path(basket.id),method: :delete,class: "delete-item" do %>
-<i class="fas fa-times "></i>
-<% end %>
-<button class="editcard edit-item" value="<%= basket.id %>/<%=basket.product.id%>"><i class="fas fa-pen "></i></button>
-</div>
+    <div class="product-basket">
+        <%= image(basket.product) %>
+        <p> <%= link_to basket.product.name , product_path(basket.product.id) %></p>
+    </div>
+    <p> <%=  basket.product.price - (basket.product.price * basket.product.promotion)/100 %> </p>
+    <p id=<%= basket.id %>> <%= basket.quantity %></p>
+    <p id="totalfor<%= basket.id %>"> <%= basket.quantity*(basket.product.price - (basket.product.price * basket.product.promotion)/100 )  %> </p>
+    <div class="basket-buttons">
+        <%= button_to  basket_path(basket.id),method: :delete,class: "delete-item" do %>
+        <i class="fas fa-times "></i>
+        <% end %>
+        <button class="editcard edit-item" value="<%= basket.id %>/<%=basket.product.id%>"><i class="fas fa-pen "></i></button>
+    </div>
 </div>
 <% end %>
 <div class="basket-total">
-<h2 id="cardtotal"> <%= @sum %> $</h2>
-<%= button_to  "Checkout", orders_path(customer_id:current_user.id),method: :post,class: "checkout" %>
+    <h2 id="cardtotal"> <%= @sum %> $</h2>
+    <%= button_to  "Checkout", orders_path(customer_id:current_user.id),method: :post,class: "checkout" %>
 </div>
-<div id="renderForm" class="addcardform" ></div>
+<div id="renderForm" class="addcardform"></div>
 
 
 <%= javascript_pack_tag 'editbasketitem' %>

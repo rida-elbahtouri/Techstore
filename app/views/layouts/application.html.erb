@@ -9,44 +9,63 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+    <div class="nav-container">
+        <nav id="navbar-content" class='nav'>
+            <div class='right-nav'>
+                <%= link_to  "TechStore", root_path ,class:"prlogo" %>
 
-    <nav class='nav'>
-        <div class='right-nav'>
-            <%= link_to  "TechStore", root_path ,class:"prlogo" %>
+                <div class="category">
+                    <span id="category-nav" class="nav-cat">Category</span>
+                    <div id="category-list" class="category-content">
+                        <a href="/category/computer">Computers</a>
+                        <a href="/category/general">General</a>
+                        <a href="/category/monitors">Monitors</a>
+                        <a href="/category/components">Components</a>
+                        <a href="/category/others">Others</a>
+                    </div>
+                </div>
 
-            <div class="category">
-                <span class="nav-cat">Category</span>
-                <div class="category-content">
-                    <a href="/category/computer">Computers</a>
-                    <a href="/category/general">General</a>
-                    <a href="/category/monitors">Monitors</a>
-                    <a href="/category/components">Components</a>
-                    <a href="/category/others">Others</a>
+                <% if user_signed_in? %>
+                <% if current_user.service == "Both"%>
+                <%= link_to  "Add Product", new_product_path ,class:"addproduct" %>
+                <% end %>
+                <% end %>
+            </div>
+            <div class='left-side'>
+
+                <%= form_tag('/search',method: :get ,:class => 'search') do %>
+                <%= text_field_tag(:term,nil, placeholder: 'search term ...') %>
+                <%= submit_tag("Search" ,class:"mysearch") %>
+                <% end %>
+
+
+
+
+                <div>
+                    <a href="/baskets"> <i class="fas fa-shopping-basket"></i> </a>
+                    <%= link_to  user_path do %>
+                    <i class="fas fa-user"></i>
+                    <% end %>
+                    <% if user_signed_in? %>
+                    <%= link_to  destroy_user_session_path,method: :delete do %>
+                    <i class="fas fa-sign-out-alt signout"></i>
+                    <% end %>
+                    <% end %>
                 </div>
             </div>
-
-            <span class='promo'>Promotions</span>
+        </nav>
+        <div id="humberger" class="humberger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <div class='left-side'>
-
-            <%= form_tag('/search',method: :get ,:class => 'search') do %>
-            <%= text_field_tag(:term,nil, placeholder: 'search term ...') %>
-            <%= submit_tag("Search" ,class:"mysearch") %>
-            <% end %>
-
-
-
-
-
-            <a href="/baskets"> <i class="fas fa-shopping-basket"></i> </a>
-            <i class="fas fa-user"></i>
-        </div>
-    </nav>
+    </div>
+    <%= checkaccount(current_user) %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <div class="wraper">
@@ -67,6 +86,7 @@
             </div>
         </footer>
     </div>
+    <%= javascript_pack_tag 'navevents'%>
 </body>
 
 </html>

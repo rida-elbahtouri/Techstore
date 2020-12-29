@@ -1,6 +1,4 @@
-<% @orders.each do |order| %>
-    <%= order.product.name %>
-    <%= order.quantity  %>
-    <%= order.adress %>
-    <br>
-<%end%>
+<h1 class="myorder">My orders</h1>
+<%= link_to  "Check your history", history_path ,class:"authlink" %>
+
+<%= Displayorder(@orders) %>

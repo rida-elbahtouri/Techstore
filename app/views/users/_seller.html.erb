@@ -1,14 +1,25 @@
 <div class="profile_products">
     <h2>My products</h2>
+    <%= link_to  "My Orders", orders_path ,class:"authlink" %>
     <% current_user.goods.each do |product| %>
-    <div class='product-card'>
+    <div class='profile_product-card'>
         <%= image(product) %>
-        <div class="product">
-            <%= link_to product.name , product_path(product.id) %>
-            <p><%= product.description[0..100] %></p>
-            <div class="buttom-card">
+        <div class="profile_product">
+            <%= link_to product.name , product_path(product.id) ,class: "product_link" %>
+            <p> Number of selles : <%= product.selletimes%> </p>
+            <div>
                 <span><%= promotion(product) %> </span>
-                <span> Number of selles : <%= product.selletimes%> </span>
+                <% if product.promotion > 0 %>
+                <%= button_to  "remove promotion", product_path(product.id),:params => {product:{promotion: 0}} ,:method => :patch,class: "remove_promotion" %>
+                <% end %>
+                <br>
+
+                <%= link_to  product_path(product.id) ,method: :delete,class: "delete-item profile_icon" do %>
+                <i class="fas fa-times "></i>
+                <% end %>
+                <%= link_to  edit_product_path(product.id) ,class: "edit-item profile_icon" do %>
+                <i class="fas fa-pen "></i>
+                <% end %>
             </div>
         </div>
     </div>
