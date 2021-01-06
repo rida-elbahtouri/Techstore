@@ -15,4 +15,12 @@ module FeatureTestHelpers
     find('#user_service').find(:option, service).select_option
     click_button('Sign up')
   end
+
+  def do_sign_up_seller
+    do_sign_up('customer and seller')
+    fill_in('adress', with: 'adress')
+    fill_in('shipping_adress', with: 'shipping_adress')
+    find('#sel_detail_product_type').find(:option, 'general').select_option
+    click_button('Create account')
+  end
 end
