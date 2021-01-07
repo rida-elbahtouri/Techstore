@@ -1,6 +1,6 @@
 require 'rails_helper'
 require 'featuresHelper/featureHelper'
-RSpec.describe 'products_controller', type: :system do
+RSpec.describe 'baskets_controller', type: :system do
   include FeatureTestHelpers
   before :each do
     User.create(name: 'test_name', email: 'test@test.com',
@@ -10,7 +10,9 @@ RSpec.describe 'products_controller', type: :system do
   describe 'create product' do
     it 'create product' do
       CreateProducts()
-      expect(page).to have_content 'your product has been created succesfully'
+      click_button('1')
+      click_button('Add To Card')
+      expect(page).to have_content 'your product has been added to card'
     end
   end
 end
