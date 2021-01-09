@@ -15,9 +15,9 @@ class RatingsController < ApplicationController
 
   def update
     stars = params[:stars][-1].to_i
-    oldRating = current_user.ratings.find(params[:id])
-    oldRating.stars = stars
-    if oldRating.save
+    old_rating = current_user.ratings.find(params[:id])
+    old_rating.stars = stars
+    if old_rating.save
       flash[:notice] = 'your review  has been updated succesfully'
       redirect_to product_path(params[:product_id])
     else

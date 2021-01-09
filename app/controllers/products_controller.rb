@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
-  before_action :userIsSeller!, only: %i[edit update new create destory]
+  before_action :user_is_seller!, only: %i[edit update new create destory]
   def index
     @mostselles = Product.all.mosts.first
     @hotselles = Product.all.mosts
@@ -73,7 +73,7 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :description, :price, :categ, :photo, :promotion)
   end
 
-  def userIsSeller!
+  def user_is_seller!
     redirect_to edit_user_registration_path(current_user.id) if !current_user.sel_detail && !current_user.cus_detail
   end
 end
