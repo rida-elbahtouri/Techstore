@@ -40,6 +40,19 @@ $blue : #4E89FF;
     color: $blue;
     font-size: 24px;
 }
+.close-btn{
+    position: absolute;
+    border: none;
+    color: white;
+    background-color: $red;
+    padding: 5px 8px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
 .flex-two {
     display: flex;
   

@@ -1,11 +1,20 @@
 const addtocard = document.querySelectorAll(".addtocard")
 const renderForm = document.getElementById("renderForm")
 const editCard = document.querySelectorAll(".editcard")
+const closeBtn = document.querySelectorAll(".close-btn")
+const RatingForm = document.getElementById("RatingForm")
 
 const CreateAdToCardForm = (data,id,method,action) =>{
     const form = document.createElement("div")
     form.className="addform"
     renderForm.appendChild(form)
+
+    const closeFormBtn = document.createElement('button')
+    closeFormBtn.className="close-btn"
+    closeFormBtn.innerHTML="X"
+    closeFormBtn.onclick=()=>{renderForm.style.display="none"}
+    form.appendChild(closeFormBtn)
+
     const name = document.createElement('p');
     name.className = 'name ';
     name.innerHTML = data.name;
@@ -39,6 +48,14 @@ const CreateAdToCardForm = (data,id,method,action) =>{
     btn.value = "Add To Card";
     add.appendChild(btn);
 }
+closeBtn.forEach(btn=>{
+    btn.addEventListener("click",()=>{
+        if(RatingForm){
+            RatingForm.style.display="none"
+        }
+      
+    })
+})
 addtocard.forEach(btn=>{
     btn.addEventListener('click',(e)=>{
         renderForm.style.display="block"
