@@ -55,7 +55,7 @@ $blue : #4E89FF;
         left: 50%;
         transform: translate(-50%,-50%);
         width: 50%;
-        height: 150px;
+        min-height: 200px;
         background-color: white;
         padding: 10px;
         text-align: center;
@@ -187,6 +187,10 @@ $blue : #4E89FF;
             width: 90%;
         }
     }
+   .addform, .rateForm {
+        width: 80%;
+    }
+  
     .statics {
         display: grid;
         grid-template-columns: 1fr 1fr;
