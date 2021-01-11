@@ -35,6 +35,7 @@ class Product < ApplicationRecord
   #     five: five,
   #     total: one + two + three + four + five }
   # end
+  # rubocop:disable Metrics/MethodLength
   def ratingsstatic
     one = 0
     two = 0
@@ -61,4 +62,5 @@ class Product < ApplicationRecord
       five: five,
       total: one + two + three + four + five }
   end
+  # rubocop:enable Metrics/MethodLength
 end
