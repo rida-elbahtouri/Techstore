@@ -17,7 +17,7 @@ RSpec.describe 'registrations_controller', type: :system do
       fill_in('adress', with: 'adress')
       fill_in('shipping_adress', with: 'shipping_adress')
       find('#sel_detail_product_type').find(:option, 'general').select_option
-      click_button('Create account')
+      click_button('Complete the account')
       expect(page).to have_content 'your information has been added succesfully'
     end
     it 'log in' do
