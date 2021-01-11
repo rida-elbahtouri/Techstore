@@ -1,5 +1,11 @@
-<%= form_tag( cus_details_path , method: "post") do |f| %>
-<%= label_tag(:adress, "Your Adress:") %>
-<%= text_field_tag(:adress) %><br>
-<%= submit_tag("Create account") %>
-<% end %>
+<div class="form">
+    <%= form_tag( cus_details_path , method: "post") do |f| %>
+    <div class="field">
+        <%= label_tag(:adress, "Your Adress:") %>
+        <%= text_field_tag(:adress) %><br>
+    </div>
+    <div class="field">
+        <%= submit_tag("Complete the account", class: "bluebutton") %>
+    </div>
+    <% end %>
+</div>

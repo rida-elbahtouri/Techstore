@@ -10,6 +10,7 @@ class Product < ApplicationRecord
   validates :name, presence: true, length: { minimum: 2, maximum: 30 }
   validates :description, presence: true, length: { minimum: 20 }
   validates :price, presence: true
+  validates :promotion, presence: true
   validates :categ, presence: true
   scope :mosts, -> { Product.order('selletimes DESC').limit(5) }
   scope :hurryup, -> { Product.order('promotion DESC').limit(4) }
