@@ -21,13 +21,39 @@ class Product < ApplicationRecord
   end
 
   #   need to improve
-  def ratingsstatic
-    one = ratings.where(stars: 1).count
-    two = ratings.where(stars: 2).count
-    three = ratings.where(stars: 3).count
-    four = ratings.where(stars: 4).count
-    five = ratings.where(stars: 5).count
+  # def ratingsstatic
+  #   one = ratings.where(stars: 1).count
+  #   two = ratings.where(stars: 2).count
+  #   three = ratings.where(stars: 3).count
+  #   four = ratings.where(stars: 4).count
+  #   five = ratings.where(stars: 5).count
 
+  #   { one: one,
+  #     two: two,
+  #     three: three,
+  #     four: four,
+  #     five: five,
+  #     total: one + two + three + four + five }
+  # end
+  def ratingsstatic
+    one = 0
+    two = 0
+    three = 0
+    four = 0
+    five = 0
+    ratings.each do |r|
+      if r.stars == 1
+        one += 1
+      elsif r.stars == 2
+        two += 1
+      elsif r.stars == 3
+        three += 1
+      elsif r.stars == 4
+        four += 1
+      elsif r.stars == 5
+        five += 1
+      end
+    end
     { one: one,
       two: two,
       three: three,
