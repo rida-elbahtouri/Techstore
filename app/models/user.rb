@@ -16,11 +16,11 @@ class User < ApplicationRecord
   has_one :cus_detail, foreign_key: 'customer_id'
 
   def static
-    if service == 'Both'
-      numberofproducts = goods.count
-      selles = goods.sum(:selletimes)
+    return unless service == 'Both'
 
-      { nproducts: numberofproducts, selles: selles }
-    end
+    numberofproducts = goods.count
+    selles = goods.sum(:selletimes)
+
+    { nproducts: numberofproducts, selles: selles }
   end
 end

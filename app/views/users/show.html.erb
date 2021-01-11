@@ -2,6 +2,9 @@
     <div class="profile_info">
         <h2><%= current_user.name %></h2>
         <p> <%= current_user.email %> </p>
+        <%= link_to  edit_user_registration_path(current_user.id) ,class: "edit-item profile_icon" do %>
+        <i class="fas fa-pen "></i>
+        <% end %>
     </div>
     <%= sellerprofile(current_user) %>
     <div class="profile_comments_container">

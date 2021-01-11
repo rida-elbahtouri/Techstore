@@ -1,18 +1,28 @@
 <%= form_for @product do |f| %>
+<div class="field">
+    <%= f.label "Product Image Url"%><br />
+    <%= f.text_field :photo %><br />
+</div>
+<div class="field">
+    <%= f.label "Product Name"%><br />
+    <%= f.text_field :name %><br />
+</div>
 
-<%= f.label "Product Image Url"%><br />
-<%= f.text_field :photo %><br />
-<%= f.label "Product Name"%><br />
-<%= f.text_field :name %><br />
 <%= f.label "Description"%><br />
 <%= f.text_field :description %><br />
-<%= f.label "Price"%><br />
+<div class="field">
+    <%= f.label "Price"%><br />
 
 
-<%= f.number_field :price %> <span>$</span><br />
-<%= f.label "Promotion"  %><br />
-<%= f.number_field :promotion %> <span>%</span><br />
-<%= f.label "Product category" %><br />
-<%= select(:product ,:categ, [['general', 'general'], ['computer', 'computer'], ['monitors', 'monitors'], ['components', 'components'], ['others', 'others']]) %><br />
+    <%= f.number_field :price %> <span>$</span><br />
+</div>
+<div class="field">
+    <%= f.label "Promotion"  %><br />
+    <%= f.number_field :promotion %> <span>%</span><br />
+</div>
+<div class="field">
+    <%= f.label "Product category" %><br />
+    <%= select(:product ,:categ, [['general', 'general'], ['computer', 'computer'], ['monitors', 'monitors'], ['components', 'components'], ['others', 'others']]) %><br />
+</div>
 <%= f.submit "Update Product" %>
 <% end %>

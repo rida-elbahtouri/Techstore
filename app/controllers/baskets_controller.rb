@@ -17,11 +17,10 @@ class BasketsController < ApplicationController
     @basket = current_user.baskets.new(product_params)
     if @basket.save
       flash[:notice] = 'your product has been added to card'
-      redirect_to products_path
     else
       flash[:alert] = "we couldn't add the product to your card #{@basket.errors.full_messages}"
-      redirect_to products_path
     end
+    redirect_back(fallback_location: root_path)
   end
 
   def edit

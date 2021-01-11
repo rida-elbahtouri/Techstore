@@ -1,18 +1,23 @@
+<div class="form">
+
+    <%= form_tag( both_details_path , method: "post") do |f| %>
+    <div class="field">
+        <%= label_tag(:adress, "Your Adress:") %>
+        <%= text_field_tag(:adress) %><br>
+    </div>
+    <div class="field">
+        <%= label_tag(:shipping_adress, "Your Shepping Adress:") %>
+        <%= text_field_tag(:shipping_adress) %><br>
+    </div>
+    <div class="field">
+        <%= label_tag(:product_type, "Your Product Category:") %><br>
+        <%= select(:sel_detail ,:product_type, [['general', 'general'], ['computer', 'computer'], ['monitors', 'monitors'], ['components', 'components'], ['others', 'others']], {},{:class => 'selecttype'}) %><br />
+    </div>
+    <div class="field">
+        <%= submit_tag("Complete the account",class:"bluebutton") %>
+    </div>
 
 
-<%= form_tag( both_details_path , method: "post") do |f| %>
- <%= label_tag(:adress, "Your Adress:") %>
-  <%= text_field_tag(:adress) %><br>
 
-  <%= label_tag(:shipping_adress, "Your Shepping Adress:") %>
-  <%= text_field_tag(:shipping_adress) %><br>
-  <%= label_tag(:product_type, "Your Product Category:") %>
-    <%= select(:sel_detail ,:product_type, [['general', 'general'], ['computer', 'computer'], ['monitors', 'monitors'], ['components', 'components'], ['others', 'others']]) %><br />
-  
-
-  <%= submit_tag("Create account") %>
-
-
-
-   
-<% end %>
+    <% end %>
+</div>

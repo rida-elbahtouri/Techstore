@@ -1,9 +1,0 @@
-<%= form_for @sel_details do |f| %>
-    <%= f.label "Your Shepping Adress"%><br/>
-    <%= f.text_field :shipping_adress %><br/>
-
-    <%= f.label "Your Product Category"%><br/>
-    <%= select(:sel_detail ,:product_type, [['general', 'general'], ['computer', 'computer'], ['monitors', 'monitors'], ['components', 'components'], ['others', 'others']]) %><br />
-
-    <%= f.submit "Create account"%>
-<%end%>

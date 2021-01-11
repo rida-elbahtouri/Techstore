@@ -4,24 +4,32 @@
  <h1 class="bluetitle">Add a New Product</h1>
  <%= form_for @product,:html => {:class => 'form',} do |f| %>
  <div class="form-content">
-     <%= f.label "Product Image Url"%><br />
-     <%= f.text_field :photo %><br />
+     <div class="field">
+         <%= f.label "Product Image Url"%><br />
+         <%= f.text_field :photo %><br />
+     </div>
      <div class="flex-two">
-         <div>
+         <div class="field">
              <%= f.label "Product Name"%><br />
              <%= f.text_field :name %><br />
          </div>
-         <div>
+         <div class="field">
              <%= f.label "Product category" %><br />
              <%= select(:product ,:categ, [['general', 'general'], ['computer', 'computer'], ['monitors', 'monitors'], ['components', 'components'], ['others', 'others']] , {},{:class => 'selecttype'})  %><br />
          </div>
      </div>
      <%= f.label "Description"%><br />
      <%= f.text_area :description   ,class: "commentarea" %><br />
-     <%= f.label "Price"%><br />
-     <%= f.number_field :price,placeholder:"Price in USD" %>
-     <%= f.label "Promotion"  %><br />
-     <%= f.number_field :promotion %>
-     <%= f.submit "Create Product" ,class:"bluebutton" %>
+     <div class="field">
+         <%= f.label "Price"%><br />
+         <%= f.number_field :price,placeholder:"Price in USD" %>
+     </div>
+     <div class="field">
+         <%= f.label "Promotion"  %><br />
+         <%= f.number_field :promotion %>
+     </div>
+     <div class="field">
+         <%= f.submit "Create Product" ,class:"bluebutton" %>
+     </div>
  </div>
  <% end %>

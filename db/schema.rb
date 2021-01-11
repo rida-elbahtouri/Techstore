@@ -10,69 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_192955) do
-
-  create_table "baskets", force: :cascade do |t|
-    t.integer "customer_id"
-    t.integer "product_id"
-    t.integer "quantity"
+ActiveRecord::Schema.define(version: 20_201_202_192_955) do
+  create_table 'baskets', force: :cascade do |t|
+    t.integer 'customer_id'
+    t.integer 'product_id'
+    t.integer 'quantity'
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.integer "customer_id"
-    t.integer "product_id"
-    t.text "content"
+  create_table 'comments', force: :cascade do |t|
+    t.integer 'customer_id'
+    t.integer 'product_id'
+    t.text 'content'
   end
 
-  create_table "cus_details", force: :cascade do |t|
-    t.integer "customer_id"
-    t.string "adress"
+  create_table 'cus_details', force: :cascade do |t|
+    t.integer 'customer_id'
+    t.string 'adress'
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.integer "seller_id"
-    t.integer "product_id"
-    t.integer "quantity"
-    t.integer "customer_id"
-    t.string "adress"
-    t.boolean "delivered", default: false
+  create_table 'orders', force: :cascade do |t|
+    t.integer 'seller_id'
+    t.integer 'product_id'
+    t.integer 'quantity'
+    t.integer 'customer_id'
+    t.string 'adress'
+    t.boolean 'delivered', default: false
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.float "price"
-    t.string "categ"
-    t.integer "seller_id"
-    t.string "photo"
-    t.integer "selletimes", default: 0
-    t.integer "promotion", default: 0
+  create_table 'products', force: :cascade do |t|
+    t.string 'name'
+    t.text 'description'
+    t.float 'price'
+    t.string 'categ'
+    t.integer 'seller_id'
+    t.string 'photo'
+    t.integer 'selletimes', default: 0
+    t.integer 'promotion', default: 0
   end
 
-  create_table "ratings", force: :cascade do |t|
-    t.integer "customer_id"
-    t.integer "product_id"
-    t.integer "stars"
+  create_table 'ratings', force: :cascade do |t|
+    t.integer 'customer_id'
+    t.integer 'product_id'
+    t.integer 'stars'
   end
 
-  create_table "sel_details", force: :cascade do |t|
-    t.integer "seller_id"
-    t.string "shipping_adress"
-    t.string "product_type"
+  create_table 'sel_details', force: :cascade do |t|
+    t.integer 'seller_id'
+    t.string 'shipping_adress'
+    t.string 'product_type'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
-    t.string "service"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.string 'name'
+    t.string 'service'
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
-
 end
