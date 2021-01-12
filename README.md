@@ -4,7 +4,7 @@
 
 ## Project features
 
-User Can
+#### User Can
 
 - Create an account
 - Exolore Products
@@ -16,7 +16,9 @@ User Can
 - Rate Product
 - See his history of comment
 - sign up as a seller
-  Seller Can :
+
+#### Seller Can :
+
 - Create/edit/delete Product
 - See Orders
 - See his history of orders
