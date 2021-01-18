@@ -30,3 +30,8 @@ body {
 .tootal {
   grid-column: 4/6;
 }
+.empty_result {
+  font-size: 18px;
+  font-weight: bolder;
+  color: rgb(82, 82, 82);
+}

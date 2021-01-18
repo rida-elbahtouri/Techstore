@@ -1,4 +1,5 @@
 <div class="products-result">
+    <%= when_null(@products.length > 0, "Ops...it seems that there is no product with the given details.")%>
     <% @products.each do |product| %>
     <div class='product_result_card'>
         <%= image(product) %>
