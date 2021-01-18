@@ -5,6 +5,7 @@
     <li>Total</li>
     <li>Customer Adress</li>
 </ul>
+<%= when_null(@orders.length > 0, "Nothing here yet.")%>
 <% @orders.each do |order| %>
 <div class="order">
     <div class="product-basket">

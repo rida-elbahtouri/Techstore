@@ -111,4 +111,8 @@ module ApplicationHelper
     render 'orders/orders'
   end
   # rubocop:enable Naming/MethodName
+
+  def when_null(cond, msg)
+    content_tag(:div, msg, class: 'empty_result') unless cond
+  end
 end

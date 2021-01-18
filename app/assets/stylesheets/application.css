@@ -24,7 +24,14 @@ body {
   min-height: 100vh;
   position: relative;
 }
-
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .tootal {
   grid-column: 4/6;
+}
+.empty_result {
+  font-size: 18px;
+  font-weight: bolder;
+  color: rgb(82, 82, 82);
 }

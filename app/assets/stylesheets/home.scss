@@ -51,6 +51,7 @@ $blue : #4e89ff;
   a {
     text-decoration: none;
     color: $blue;
+    text-transform: capitalize;
   }
 }
 
@@ -215,6 +216,7 @@ $blue : #4e89ff;
       font-weight: bold;
       color: white;
       text-decoration: none;
+      text-transform: capitalize;
     }
 
     p {

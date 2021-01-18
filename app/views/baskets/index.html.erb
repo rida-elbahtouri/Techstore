@@ -6,7 +6,7 @@
 </div>
 
 
-
+<%= when_null(@baskets.length > 0, "There is no product in your basket yet, try add them from home page or search for project you like.")%>
 <% @baskets.each do |basket| %>
 <div class="basket">
     <div class="product-basket">

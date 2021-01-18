@@ -1,0 +1,74 @@
+$red : #f13864;
+$blue : #4e89ff;
+.addcardform {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(119, 119, 119, 0.8);
+  width: 100%;
+}
+
+.addform {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  //width: 50%;
+  min-height: 150px;
+  background-color: white;
+  padding: 10px;
+
+  .flex-two {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .photo {
+    width: 350px;
+  }
+  .name {
+    color: $blue;
+    font-size: 18px;
+    text-transform: capitalize;
+  }
+  .bluebutton {
+    display: block;
+    width: 100%;
+  }
+  .quantityform {
+
+    margin: 5px auto;
+    text-align: center;
+    padding: 5px;
+
+  }
+  .quantity { 
+  -moz-appearance: textfield;
+  width: 50px;
+  border: none;
+  font-size: 24px;
+  text-align: center;
+  padding: 5px 10px;
+}
+ 
+  .quantitybtns {
+    color: white;
+    background-color: $red;
+    font-size: 24px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .downquantitybtn {
+    background-color: #f138635d;
+  }
+
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}

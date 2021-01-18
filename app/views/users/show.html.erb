@@ -9,6 +9,7 @@
     <%= sellerprofile(current_user) %>
     <div class="profile_comments_container">
         <h2>My comments</h2>
+        <%= when_null(current_user.comments.length > 0, "You have no comments yet.")%>
         <% current_user.comments.each do |comment| %>
         <p class="profile_comment"> <%= comment.content %> </p>
         <% end %>
