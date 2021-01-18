@@ -1,3 +1,5 @@
+$red : #f13864;
+$blue : #4e89ff;
 .addcardform {
   display: none;
   position: fixed;
@@ -19,8 +21,38 @@
   background-color: white;
   padding: 10px;
 
-
+  .flex-two {
+    justify-content: space-between;
+    align-items: center;
+  }
   .photo {
+    width: 350px;
+  }
+  .name {
+    color: $blue;
+    font-size: 18px;
+    text-transform: capitalize;
+  }
+  .bluebutton {
+    display: block;
     width: 100%;
+  }
+  .quantity { 
+  -webkit-appearance: none; 
+  margin: 0; 
+  -moz-appearance: textfield;
+}
+  .quantity {
+    width: 20px;
+    border: none;
+    font-size: 18px;
+    padding: 5px 10px;
+  }
+  .quantitybtns {
+    color: white;
+    background-color: $red;
+    padding: 5px 10px;
+    border-radius: 2px;
+    cursor: pointer;
   }
 }
