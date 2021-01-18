@@ -66,7 +66,7 @@ const CreateAdToCardForm = (data, id, method, action) => {
   const downbtn = document.createElement('button')
   downbtn.type="button"
   downbtn.id="downbtn_id"
-  downbtn.className = "quantitybtns"
+  downbtn.className = "quantitybtns downquantitybtn"
   downbtn.onclick = () => { decquantity()}
   quantityform.appendChild(downbtn)
 
