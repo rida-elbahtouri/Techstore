@@ -64,7 +64,7 @@ class ProductsController < ApplicationController
 
   def productdata
     product = Product.find(params[:id])
-    render json: product, only: %i[name price promotion]
+    render json: product
   end
 
   private

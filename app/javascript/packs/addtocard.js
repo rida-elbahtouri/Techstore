@@ -11,13 +11,22 @@ const CreateAdToCardForm = (data, id, method, action) => {
   const closeFormBtn = document.createElement('button');
   closeFormBtn.className = 'close-btn';
   closeFormBtn.innerHTML = 'X';
-  closeFormBtn.onclick = () => { renderForm.style.display = 'none'; };
+  closeFormBtn.onclick = () => { renderForm.style.display = 'none';
+  form.parentNode.removeChild(form) };
   form.appendChild(closeFormBtn);
 
+ const photo = document.createElement('img');
+  photo.className = 'photo';
+  photo.setAttribute('src',data.photo);
+  form.appendChild(photo);
+  
   const name = document.createElement('p');
   name.className = 'name ';
   name.innerHTML = data.name;
   form.appendChild(name);
+
+ 
+
   const price = document.createElement('p');
   price.className = 'price ';
   price.innerHTML = data.price;
@@ -49,6 +58,7 @@ const CreateAdToCardForm = (data, id, method, action) => {
 };
 closeBtn.forEach(btn => {
   btn.addEventListener('click', () => {
+    
     if (RatingForm) {
       RatingForm.style.display = 'none';
     }

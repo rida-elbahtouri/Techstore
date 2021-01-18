@@ -14,8 +14,13 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50%;
-  height: 150px;
+  //width: 50%;
+  min-height: 150px;
   background-color: white;
   padding: 10px;
+
+
+  .photo {
+    width: 100%;
+  }
 }
