@@ -17,6 +17,10 @@ const changevalue=(oper,value,id)=>{
       leftbtn.style.backgroundColor = "#f1386386";
     }
   }
+
+  const newqunt = document.getElementById(`quantityvalue${id}`).innerHTML
+  updatebasket( newqunt,id,value)
+
 }
 
 rightbtns.forEach(btn=>{
@@ -33,6 +37,32 @@ rightbtns.forEach(btn=>{
     
   })
 })
+
+const updatebasket = ( qunt, BasketId,quntel) => {
+  fetch(`/baskets/${BasketId}`,
+    {
+      method: 'PATCH',
+      body: JSON.stringify({
+        id: parseInt(BasketId, 10),
+       //product_id: parseInt(productId, 10),
+        quantity: parseInt(qunt, 10),
+      }),
+      headers: { 'Content-type': 'application/json; charset=UTF-8' },
+    })
+    .then(res=>res.json()).then(res=>{//renderForm.style.display = 'none',
+    //eslint-disable-next-line
+      let price = res.price
+      let promo = res.promotion
+   
+      const total = document.getElementById(`totalfor${BasketId}`)
+    
+       cardtotal.innerHTML = parseInt(cardtotal.innerHTML, 10) + parseInt((qunt * (price - (price * promo) / 100)) - (quntel.innerHTML * (price - (price * promo) / 100)) , 10),
+       total.innerHTML = qunt * (price - (price * promo) / 100)
+ 
+    console.log(res)
+  });
+};
+
 // const CreateAdToCardForm = (data, id, basketID) => {
 //   const form = document.createElement('div');
 //   form.className = 'addform';
@@ -85,21 +115,4 @@ rightbtns.forEach(btn=>{
 //   });
 // });
 
-// const updatebasket = (e, qunt, productId, BasketId, quntel, total, price, promo) => {
-//   e.preventDefault();
-//   fetch(`/baskets/${BasketId}`,
-//     {
-//       method: 'PATCH',
-//       body: JSON.stringify({
-//         id: parseInt(BasketId, 10),
-//         product_id: parseInt(productId, 10),
-//         quantity: parseInt(qunt, 10),
-//       }),
-//       headers: { 'Content-type': 'application/json; charset=UTF-8' },
-//     })
-//     .then(renderForm.style.display = 'none',
-//     // eslint-disable-next-line
-//       cardtotal.innerHTML = parseInt(cardtotal.innerHTML, 10) + parseInt((qunt * (price - (price * promo) / 100)) - (quntel.innerHTML * (price - (price * promo) / 100)), 10),
-//       quntel.innerHTML = qunt,
-//       total.innerHTML = qunt * (price - (price * promo) / 100));
-// };
+
