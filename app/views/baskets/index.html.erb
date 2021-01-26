@@ -14,15 +14,7 @@
         <p> <%= link_to basket.product.name , product_path(basket.product.id) %></p>
     </div>
     <p> <%=  basket.product.price - (basket.product.price * basket.product.promotion)/100 %> </p>
-    <p class="basket_quantity" id=<%= basket.id %>>
-        <button id="leftbtn<%= basket.id%>" type="button" class="basketquantitybutton qunleftbtn">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <span id="quantityvalue<%= basket.id %>" class="quantityvalue"> <%= basket.quantity %></span>
-        <button type="button" class="basketquantitybutton qunrightbtn">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-    </p>
+    <p id=<%= basket.id %>> <%= basket.quantity %></p>
     <p id="totalfor<%= basket.id %>"> <%= basket.quantity*(basket.product.price - (basket.product.price * basket.product.promotion)/100 )  %> </p>
     <div class="basket-buttons">
         <%= button_to  basket_path(basket.id),method: :delete,class: "delete-item" do %>
