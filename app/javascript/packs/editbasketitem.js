@@ -6,6 +6,7 @@ const cardtotal = document.getElementById('cardtotal');
 const CreateAdToCardForm = (data, id, basketID) => {
   const form = document.createElement('div');
   form.className = 'addform';
+  form.id = 'editbasketcontent';
   renderForm.appendChild(form);
   const closeFormBtn = document.createElement('button');
   closeFormBtn.className = 'close-btn';
@@ -91,6 +92,7 @@ const CreateAdToCardForm = (data, id, basketID) => {
 const incquantity =()=>{
   e = document.getElementById("quantity_id")
   e.value = parseInt(e.value,10) + 1
+  console.log("hello")
   disablebtn(e.value)
 }
 const decquantity=()=>{
@@ -125,6 +127,7 @@ editCard.forEach(btn => {
 
 const updatebasket = (e, qunt, productId, BasketId, quntel, total, price, promo) => {
   e.preventDefault();
+  console.log(`/baskets/${parseInt(BasketId, 10)}`)
   fetch(`/baskets/${parseInt(BasketId, 10)}`,
     {
       method: 'PATCH',
@@ -137,6 +140,7 @@ const updatebasket = (e, qunt, productId, BasketId, quntel, total, price, promo)
     })
     .then(renderForm.style.display = 'none',
     // eslint-disable-next-line
+      renderForm.innerHTML=null,
       cardtotal.innerHTML = parseInt(cardtotal.innerHTML, 10) + parseInt((qunt * (price - (price * promo) / 100)) - (quntel.innerHTML * (price - (price * promo) / 100)), 10),
       quntel.innerHTML = qunt,
       total.innerHTML = qunt * (price - (price * promo) / 100));
