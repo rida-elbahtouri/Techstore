@@ -21,6 +21,10 @@
      <%= f.label "Description"%><br />
      <%= f.text_area :description   ,class: "commentarea" %><br />
      <div class="field">
+         <%= f.label :content %>
+         <%= f.rich_text_area :content %>
+     </div>
+     <div class="field">
          <%= f.label "Price"%><br />
          <%= f.number_field :price,placeholder:"Price in USD" %>
      </div>

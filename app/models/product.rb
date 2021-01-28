@@ -6,7 +6,7 @@ class Product < ApplicationRecord
 
   has_many :baskets, dependent: :destroy
   has_many :customers, through: :baskets, foreign_key: 'customer_id', dependent: :destroy
-
+  has_rich_text :content
   validates :name, presence: true, length: { minimum: 2, maximum: 30 }
   validates :description, presence: true, length: { minimum: 20 }
   validates :price, presence: true
