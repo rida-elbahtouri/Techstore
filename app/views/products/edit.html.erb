@@ -1,28 +1,41 @@
-<%= form_for @product do |f| %>
-<div class="field">
-    <%= f.label "Product Image Url"%><br />
-    <%= f.text_field :photo %><br />
-</div>
-<div class="field">
-    <%= f.label "Product Name"%><br />
-    <%= f.text_field :name %><br />
-</div>
+ <% @product.errors.full_messages.each do |msg| %>
+ <p> <%= msg%> </p>
+ <% end %>
+ <h1 class="bluetitle">Edit Product</h1>
+ <%= form_for @product ,:html => {:class => 'form',} do |f| %>
+ <div class="form-content">
+     <div class="field">
+         <%= f.label "Product Image Url"%><br />
+         <%= f.text_field :photo %><br />
+     </div>
+     <div class="flex-two">
+         <div class="field">
+             <%= f.label "Product Name"%><br />
+             <%= f.text_field :name %><br />
+         </div>
+         <div class="field">
+             <%= f.label "Product category" %><br />
+             <%= select(:product ,:categ, [['general', 'general'], ['computer', 'computer'], ['monitors', 'monitors'], ['components', 'components'], ['others', 'others']], {},{:class => 'selecttype'}) %><br />
+         </div>
+     </div>
+     <%= f.label "Short Description"%><br />
+     <%= f.text_area :description   ,class: "commentarea" %><br />
+     <div class="field">
+         <%= f.label "Description" %>
+         <%= f.rich_text_area :content %>
+     </div>
+     <div class="field">
+         <%= f.label "Price"%><br />
 
-<%= f.label "Description"%><br />
-<%= f.text_field :description %><br />
-<div class="field">
-    <%= f.label "Price"%><br />
 
-
-    <%= f.number_field :price %> <span>$</span><br />
-</div>
-<div class="field">
-    <%= f.label "Promotion"  %><br />
-    <%= f.number_field :promotion %> <span>%</span><br />
-</div>
-<div class="field">
-    <%= f.label "Product category" %><br />
-    <%= select(:product ,:categ, [['general', 'general'], ['computer', 'computer'], ['monitors', 'monitors'], ['components', 'components'], ['others', 'others']]) %><br />
-</div>
-<%= f.submit "Update Product" %>
-<% end %>
+         <%= f.number_field :price %>
+     </div>
+     <div class="field">
+         <%= f.label "Promotion"  %><br />
+         <%= f.number_field :promotion %>
+     </div>
+     <div class="field">
+         <%= f.submit "Update Product" ,class:"bluebutton" %>
+     </div>
+ </div>
+ <% end %>
