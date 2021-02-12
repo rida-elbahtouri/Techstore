@@ -55,10 +55,10 @@ module ApplicationHelper
 
   def addorgotobasket(product)
     @product = product
-    basketproducts = current_user.baskets.pluck(:product_id)
 
-    if basketproducts.include?(product.id)
-      link_to 'See Basket', baskets_path, class: 'visit-basket'
+    if current_user
+      basketproducts = current_user.baskets.pluck(:product_id)
+      link_to 'See Basket', baskets_path, class: 'visit-basket' if basketproducts.include?(product.id)
     else
       render 'products/addtocardbutton'
     end
