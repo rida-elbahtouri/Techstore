@@ -181,4 +181,14 @@ $blue : #4e89ff;
       margin-right: 0;
     }
   }
+  .authpage {
+    grid-template-columns: 1fr;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    .side-auth {
+     display: none;
+    }
+  }
+  
 }
