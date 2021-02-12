@@ -15,6 +15,7 @@
  */
 
 /* @import '@fortawesome/fontawesome-free';  */
+
 body {
   margin: 0;
   padding: 0;
@@ -25,7 +26,11 @@ body {
   position: relative;
 }
 * {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: 'PT Sans', sans-serif;
+
+  font-family: 'Yusei Magic', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 .tootal {
   grid-column: 4/6;

@@ -18,8 +18,12 @@
              <%= select(:product ,:categ, [['general', 'general'], ['computer', 'computer'], ['monitors', 'monitors'], ['components', 'components'], ['others', 'others']] , {},{:class => 'selecttype'})  %><br />
          </div>
      </div>
-     <%= f.label "Description"%><br />
+     <%= f.label "Short Description"%><br />
      <%= f.text_area :description   ,class: "commentarea" %><br />
+     <div class="field">
+         <%= f.label "Description" %>
+         <%= f.rich_text_area :content %>
+     </div>
      <div class="field">
          <%= f.label "Price"%><br />
          <%= f.number_field :price,placeholder:"Price in USD" %>

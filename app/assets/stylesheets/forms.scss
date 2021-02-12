@@ -122,7 +122,18 @@ $blue : #4e89ff;
   background-color: white;
   border: 1px solid $red;
 }
-
+.basketquantitybutton {
+  padding: 5px 10px;
+  font-size: 24px;
+  border: none;
+  border-radius: 5px;
+  background-color: $red;
+  cursor: pointer;
+  color: white;
+}
+.qunleftbtn {
+  background-color: #f1386386;
+}
 @media only screen and (max-width: 850px) {
   .flex-two {
     flex-direction: column;

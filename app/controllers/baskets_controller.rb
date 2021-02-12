@@ -31,7 +31,8 @@ class BasketsController < ApplicationController
     @basket = current_user.baskets.find(params[:id])
     if @basket.update(product_params)
       flash[:notice] = 'your product has been updated succesfully'
-      redirect_to baskets_path
+      # redirect_to baskets_path
+      render json: { msg: 'sc' }
     else
       flash[:alert] = "we couldn't update the product"
       render index
