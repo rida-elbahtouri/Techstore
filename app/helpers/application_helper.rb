@@ -89,7 +89,7 @@ module ApplicationHelper
   # rubocop:disable Naming/MethodName
   def showRatingbtn(product)
     # condition to show rate btn
-    return unless Order.find_by(customer_id: current_user.id, product_id: product.id)
+    return unless current_user && Order.find_by(customer_id: current_user.id, product_id: product.id)
 
     rating = current_user.ratings.find_by(product_id: product.id)
     if rating
@@ -102,6 +102,8 @@ module ApplicationHelper
   # rubocop:enable Naming/MethodName
   def newupdaterating(product)
     # condition for update review
+    return unless current_user
+
     rating = current_user.ratings.find_by(product_id: product.id)
     if rating
       button_to 'Submit', rating_path(rating.id),
