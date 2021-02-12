@@ -58,7 +58,11 @@ module ApplicationHelper
 
     if current_user
       basketproducts = current_user.baskets.pluck(:product_id)
-      link_to 'See Basket', baskets_path, class: 'visit-basket' if basketproducts.include?(product.id)
+      if basketproducts.include?(product.id)
+        link_to 'See Basket', baskets_path, class: 'visit-basket'
+      else
+        render 'products/addtocardbutton'
+      end
     else
       render 'products/addtocardbutton'
     end
