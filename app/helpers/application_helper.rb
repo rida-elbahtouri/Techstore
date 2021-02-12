@@ -1,5 +1,14 @@
 module ApplicationHelper
   # this method check where to take user based on the service he chosed
+
+  def navc(user)
+    if user
+      render 'layouts/loggedin'
+    else
+      render 'layouts/loggedout'
+    end
+  end
+
   def accountcomplete(user)
     link = user.service
     if link == 'Both'

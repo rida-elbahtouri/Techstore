@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <% if current_user %>
+
     <div class="nav-container">
         <nav id="navbar-content" class='nav'>
             <div class='right-nav'>
@@ -49,17 +49,7 @@
 
 
 
-                <div>
-                    <a href="/baskets"> <i class="fas fa-shopping-basket"></i> </a>
-                    <%= link_to  user_path do %>
-                    <i class="fas fa-user"></i>
-                    <% end %>
-                    <% if user_signed_in? %>
-                    <%= link_to  destroy_user_session_path,method: :delete do %>
-                    <i class="fas fa-sign-out-alt signout"></i>
-                    <% end %>
-                    <% end %>
-                </div>
+                <%= navc(current_user) %>
             </div>
         </nav>
         <div id="humberger" class="humberger">
@@ -68,7 +58,7 @@
             <span></span>
         </div>
     </div>
-    <% end %>
+
     <%= checkaccount(current_user) %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
