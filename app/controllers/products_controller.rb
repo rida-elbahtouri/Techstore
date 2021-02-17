@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: %i[edit update new create destory]
   before_action :user_is_seller!, only: %i[edit update new create destory]
   def index
     @mostselles = Product.all.mosts.first

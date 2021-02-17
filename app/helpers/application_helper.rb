@@ -1,5 +1,14 @@
 module ApplicationHelper
   # this method check where to take user based on the service he chosed
+
+  def navc(user)
+    if user
+      render 'layouts/loggedin'
+    else
+      render 'layouts/loggedout'
+    end
+  end
+
   def accountcomplete(user)
     link = user.service
     if link == 'Both'
@@ -46,10 +55,14 @@ module ApplicationHelper
 
   def addorgotobasket(product)
     @product = product
-    basketproducts = current_user.baskets.pluck(:product_id)
 
-    if basketproducts.include?(product.id)
-      link_to 'See Basket', baskets_path, class: 'visit-basket'
+    if current_user
+      basketproducts = current_user.baskets.pluck(:product_id)
+      if basketproducts.include?(product.id)
+        link_to 'See Basket', baskets_path, class: 'visit-basket'
+      else
+        render 'products/addtocardbutton'
+      end
     else
       render 'products/addtocardbutton'
     end
@@ -80,7 +93,7 @@ module ApplicationHelper
   # rubocop:disable Naming/MethodName
   def showRatingbtn(product)
     # condition to show rate btn
-    return unless Order.find_by(customer_id: current_user.id, product_id: product.id)
+    return unless current_user && Order.find_by(customer_id: current_user.id, product_id: product.id)
 
     rating = current_user.ratings.find_by(product_id: product.id)
     if rating
@@ -93,6 +106,8 @@ module ApplicationHelper
   # rubocop:enable Naming/MethodName
   def newupdaterating(product)
     # condition for update review
+    return unless current_user
+
     rating = current_user.ratings.find_by(product_id: product.id)
     if rating
       button_to 'Submit', rating_path(rating.id),

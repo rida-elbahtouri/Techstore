@@ -1,0 +1,11 @@
+  <div>
+      <a href="/baskets"> <i class="fas fa-shopping-basket"></i> </a>
+      <%= link_to  user_path do %>
+      <i class="fas fa-user"></i>
+      <% end %>
+      <% if user_signed_in? %>
+      <%= link_to  destroy_user_session_path,method: :delete do %>
+      <i class="fas fa-sign-out-alt signout"></i>
+      <% end %>
+      <% end %>
+  </div>

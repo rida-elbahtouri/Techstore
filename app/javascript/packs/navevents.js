@@ -5,7 +5,7 @@ const nav = document.getElementById('navbar-content');
 
 function WindowSize() {
   const w = document.documentElement.clientWidth;
-  if (w > 850) {
+  if (w > 840) {
     nav.style.display = 'flex';
   } else {
     nav.style.display = 'none';

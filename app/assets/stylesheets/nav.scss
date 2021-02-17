@@ -23,6 +23,14 @@ $blue : #4e89ff;
   .signout:hover {
     color: $red;
   }
+  .nav-btns{
+    background-color: $blue;
+    color: whitesmoke;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-left: 5px;
+  }
 }
 
 .nav a {

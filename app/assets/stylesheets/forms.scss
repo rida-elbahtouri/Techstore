@@ -1,21 +1,27 @@
 $red : #f13864;
 $blue : #4e89ff;
 
+.text-center {
+  text-align: center;
+}
 .form {
   border: 1px solid rgb(209, 209, 209);
   padding: 25px 5px;
   border-radius: 5px;
-
+  
   .form-content {
     width: 90%;
     margin: 0 auto;
   }
-
+  .field {
+    padding: 20px 0;
+  }
   .field label {
     font-weight: bold;
     font-size: 18px;
     text-align: center;
     color: rgb(78, 78, 78);
+   
   }
 
   .field input {
@@ -94,7 +100,39 @@ $blue : #4e89ff;
   padding: 0;
   text-align: center;
 }
-
+.authpage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  padding: 0;
+  height: 90vh;
+  .side-auth {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.336), rgba(0, 0, 0, 0.432)),url("https://images.pexels.com/photos/4065885/pexels-photo-4065885.jpeg?cs=srgb&dl=pexels-cottonbro-4065885.jpg&fm=jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding-top: 40px;
+    h2 {
+      text-transform: capitalize;
+      color: white;
+      font-size: 36px;
+    }
+    p{
+      width: 70%;
+      color: white;
+      font-size: 24px;
+      margin: 0 auto;
+      padding: 10px;
+      line-height: 50px;
+    }
+  }
+}
+.login {
+  text-align: center;
+  form .field {
+    padding: 20px 0;
+  }
+}
 .redtitle {
   color: $red;
 }
@@ -143,4 +181,14 @@ $blue : #4e89ff;
       margin-right: 0;
     }
   }
+  .authpage {
+    grid-template-columns: 1fr;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    .side-auth {
+     display: none;
+    }
+  }
+  
 }

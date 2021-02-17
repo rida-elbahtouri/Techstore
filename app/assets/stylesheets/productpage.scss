@@ -1,23 +1,25 @@
 $red : #f13864;
 $blue : #4e89ff;
 
-.productpage-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+
+
+.flotedtext {
+  display: inline-block;
+  .left-produt {
+    float: left;
+    width: 40%;
+    padding-right: 20px;
+  }
 }
 
-.left-produt {
-  grid-column: 1/2;
 
+.left-produt {
   img {
     width: 100%;
   }
-
   .pro_price {
     font-size: 24px;
     color: $red;
-
     .newprice {
       font-size: 24px;
       color: $red;
@@ -182,13 +184,12 @@ $blue : #4e89ff;
 }
 
 @media only screen and (max-width: 1300px) {
-  .productpage-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .flotedtext {
+    .left-produt {
+      width: 50%;
+    }
   }
-
   .right-product {
-    grid-column: 2/-1;
-
     .pro_descr {
       width: 100%;
     }
@@ -196,13 +197,15 @@ $blue : #4e89ff;
 }
 
 @media only screen and (max-width: 850px) {
-  .productpage-grid {
-    grid-template-columns: 1fr;
+  .flotedtext {
+    .left-produt {
+     clear: both;
+      width: 100%;
+      padding-right: 5px;
+    }
   }
 
   .right-product {
-    grid-column: 1/-1;
-
     .pro_descr {
       width: 90%;
     }
