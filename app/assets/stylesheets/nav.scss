@@ -9,7 +9,8 @@ $blue : #4e89ff;
   align-items: center;
   border-bottom: 1px solid gray;
   padding: 0 5px;
-
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   .addproduct {
     font-size: 14px;
     font-weight: bold;
