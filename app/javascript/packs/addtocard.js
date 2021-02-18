@@ -106,7 +106,7 @@ const CreateAdToCardForm = (data, id, method, action) => {
   const btn = document.createElement('input');
   btn.className = 'bluebutton';
   btn.type = 'submit';
-  btn.value = 'Add To Card';
+  btn.value = 'Add To Cart';
   add.appendChild(btn);
 };
 

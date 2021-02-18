@@ -105,7 +105,7 @@ $blue : #4e89ff;
   grid-template-columns: 1fr 1fr;
   margin: 0;
   padding: 0;
-  height: 90vh;
+  min-height: 80vh;
   .side-auth {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.336), rgba(0, 0, 0, 0.432)),url("https://images.pexels.com/photos/4065885/pexels-photo-4065885.jpeg?cs=srgb&dl=pexels-cottonbro-4065885.jpg&fm=jpg");
     background-repeat: no-repeat;

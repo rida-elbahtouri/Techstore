@@ -82,7 +82,7 @@ const CreateAdToCardForm = (data, id, basketID) => {
   const btn = document.createElement('input');
   btn.className = 'bluebutton';
   btn.type = 'submit';
-  btn.value = 'edit To Card';
+  btn.value = 'Save';
   // eslint-disable-next-line
   btn.onclick = (e) => updatebasket(e,
     quantity.value, id, basketID, qunt, total, data.price, data.promotion);
@@ -139,7 +139,7 @@ const updatebasket = (e, qunt, productId, BasketId, quntel, total, price, promo)
     .then(renderForm.style.display = 'none',
     // eslint-disable-next-line
       renderForm.innerHTML=null,
-      cardtotal.innerHTML = parseInt(cardtotal.innerHTML, 10) + parseInt((qunt * (price - (price * promo) / 100)) - (quntel.innerHTML * (price - (price * promo) / 100)), 10),
+      cardtotal.innerHTML = `${parseInt(cardtotal.innerHTML, 10) + parseInt((qunt * (price - (price * promo) / 100)) - (quntel.innerHTML * (price - (price * promo) / 100)), 10)}$`,
       quntel.innerHTML = qunt,
-      total.innerHTML = qunt * (price - (price * promo) / 100));
+      total.innerHTML = `${qunt * (price - (price * promo) / 100)}$`)
 };
