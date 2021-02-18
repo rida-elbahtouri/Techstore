@@ -11,14 +11,14 @@ RSpec.describe 'baskets_controller', type: :system do
     it 'add product to basket' do
       CreateProducts()
       click_button('1')
-      click_button('Add To Card')
+      click_button('Add To Cart')
       expect(page).to have_content 'your product has been added to card'
     end
 
     it 'remove product from basket' do
       CreateProducts()
       click_button('1')
-      click_button('Add To Card')
+      click_button('Add To Cart')
       visit baskets_path
       click_on(class: 'delete-item')
       expect(page).to have_content 'your product has been removed succesfully'
